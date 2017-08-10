@@ -27,11 +27,6 @@ It contains :
 * home.ts
 
 ### Usefull links
-*[Ionic docs](https://ionicframework.com/docs/)
-*[Ionic components](https://ionicframework.com/docs/components/#overview)
-*[TypeScript docs](https://www.typescriptlang.org/docs/home.html)
-
-### Actual design
-
-![alt_tag](http://hpics.li/d16bca2)
-
+* [Ionic docs](https://ionicframework.com/docs/)
+* [Ionic components](https://ionicframework.com/docs/components/#overview)
+* [TypeScript docs](https://www.typescriptlang.org/docs/home.html)
