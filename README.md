@@ -5,7 +5,7 @@ First development with Ionic / Angular 2 with a color game.
 ## Getting Started
 
 This project has for goal to learn Angular 2 and TypeScript. 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+You must choose the correct color that corresponds to the hexadecimal code among the choices offered
 
 ### Prerequisites
 
