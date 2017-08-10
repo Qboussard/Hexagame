@@ -5,7 +5,7 @@ First development with Ionic / Angular 2 with a color game.
 ## Getting Started
 
 This project has for goal to learn Angular 2 and TypeScript. 
-You must choose the correct color that corresponds to the hexadecimal code among the choices offered
+_You must choose the correct color that corresponds to the hexadecimal code among the choices offered_
 
 ### Prerequisites
 
@@ -21,7 +21,7 @@ $ ionic serve
 ```
 
 The game is on *src/pages/home*
-It contains :
+_It contains :_
 * home.html
 * home.scss
 * home.ts
@@ -30,3 +30,6 @@ It contains :
 * [Ionic docs](https://ionicframework.com/docs/)
 * [Ionic components](https://ionicframework.com/docs/components/#overview)
 * [TypeScript docs](https://www.typescriptlang.org/docs/home.html)
+
+### Actual templates
+![](https://image.noelshack.com/fichiers/2017/32/4/1502360373-20747149-10209330983939004-1930323581-o.png)
