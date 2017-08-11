@@ -6,8 +6,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  constructor(public navCtrl: NavController) {
-  }
+  constructor(public navCtrl: NavController) {}
 
   possible: string = "0123456789ABCDEF";
   point: number = 0;
@@ -34,25 +33,15 @@ export class HomePage {
   }
 
   setDifficulty(){
-    if(this.point == 0 && this.point < 5){
-      this.difficulty = 0;
-    }
-    if(this.point >= 5 && this.point < 10){
-      this.difficulty = 1;
-    }
-    if(this.point >= 10){
-      this.difficulty = 2;
-    }
+    if (this.point == 0 && this.point < 5)  return this.difficulty = 0;
+    if (this.point >= 5 && this.point < 10) return this.difficulty = 1;
+    if (this.point >= 10)                   return this.difficulty = 2;
   }
 
   checkResponse(userChoice){
-    if(userChoice == this.goodColor){
-      this.point++;
-      this.ngOnInit();
-    }
-    else{
-      this.fail = 1;
-    }
+    if(userChoice != this.goodColor) return this.fail = 1;
+    this.point++;
+    this.ngOnInit();
   }
 
   ngOnInit(){
