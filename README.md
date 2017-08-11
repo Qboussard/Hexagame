@@ -10,12 +10,12 @@ _You must choose the correct color that corresponds to the hexadecimal code amon
 ### Prerequisites
 
 You need to install Ionic Cordova
-```
+```console
 $ npm install -g ionic cordova
 ```
 
 For launch the project 
-```
+```console
 $ cd hexagame
 $ ionic serve
 ```
