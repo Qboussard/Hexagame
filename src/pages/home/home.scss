@@ -1,14 +1,16 @@
 page-home {
 
   .question{
-    width:50%;
-    text-align: left;
+    position: absolute;
+    left: 20px;
     color:#fff;
+    top: 12px;
   }
   .point{
-    width:50%;
-    text-align: right;
+    position: absolute;
+    right: 20px;
     color:#fff;
+    top: 12px;
   }
   .toolbar-background,.toolbar-title-ios{
     background: #3c3c3c;
