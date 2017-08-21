@@ -12,7 +12,10 @@
     <span class='helpersColor' [hidden]="!fail" >{{color}}</span>
   </div>
   <div class="startBlock" [hidden]="!fail">
-    <button ion-button block (click)="ngOnInit()">Start</button>
+    <div class="contentRestart">
+      <button ion-button block (click)="ngOnInit()">Rejouer</button>
+    </div>
+
   </div>
 
 
