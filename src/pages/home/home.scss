@@ -1,16 +1,14 @@
 page-home {
 
   .question{
-    position: absolute;
-    left: 20px;
     color:#fff;
-    top: 12px;
   }
   .point{
-    position: absolute;
-    right: 20px;
     color:#fff;
-    top: 12px;
+  }
+  .toolbar-title-md{
+    display: flex;
+    justify-content: space-between;
   }
   .toolbar-background,.toolbar-title-ios{
     background: #3c3c3c;
