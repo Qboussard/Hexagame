@@ -5,12 +5,7 @@ import { Slides } from 'ionic-angular';
 
 import { HomePage } from '../home/home';
 import { EasyPage } from '../easy/easy';
-/**
- * Generated class for the NavPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+
 
 @Component({
   selector: 'page-nav',
@@ -25,11 +20,6 @@ export class NavPage {
   goToSlide() {
     this.slides.slideTo(2, 500);
   }
-
-  // goToOtherPage(nextPage) {
-  //   console.log(nextPage);
-  //   // this.navCtrl.push(nextPage);
-  // }
 
   goToEasyPage() {
     this.navCtrl.push(EasyPage);
