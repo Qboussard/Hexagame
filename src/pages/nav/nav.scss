@@ -1,16 +1,111 @@
 .back-button.show-back-button{
   display: none;
 }
-
+.ion-icon{
+  color:#fafafa;
+  font-size: 2.2em;
+}
 page-nav {
 
+  .slides{
+    background-color: #363A46;
+    color:#444444;
+
+    .slide-zoom{
+      color:#fafafa;
+      font-size: 2.2em;
+      height: 100%;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .ico_block{
+      box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.3),0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      display: inline-block;
+      padding: 20px 28px;
+    }
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:first-child{
+      background-color: #6ED69A;
+    }
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(2){
+      background-color: #0CC6FF;
+    }
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(3){
+      background-color: #F85465;
+    }
+    .swiper-pagination-bullet{
+      opacity: 0.5;
+    }
+    .swiper-pagination-bullet-active{
+      opacity: 1;
+    }
+
+  }
   .nav1{
-    // background: #6ED69A;
+
+    .slide-zoom{
+      .header_page{
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+      }
+      .subButton{
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+
+        .ico_block{
+          background-color: #6ED69A;
+        }
+      }
+    }
   }
   .nav2{
-    // background: #F85465;
+    .slide-zoom{
+      .header_page{
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+      }
+      .subButton{
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+
+        .ico_block{
+          background-color: #0CC6FF;
+        }
+      }
+    }
   }
   .nav3{
-    // background: #0DC4FF;
+    .slide-zoom{
+      .header_page{
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+      }
+      .subButton{
+        height: 50%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content:space-around;
+
+        .ico_block{
+          background-color: #F85465;
+        }
+      }
+    }
   }
+
 }

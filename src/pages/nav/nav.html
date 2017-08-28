@@ -1,15 +1,53 @@
 <ion-content>
-  <ion-slides loop="true" autoplay="false" initialSlide='1' zoom="false">
+  <ion-slides loop="true" autoplay="false" initialSlide='1' zoom="false" pager='true'>
     <ion-slide class='nav1'>
-      <h1>Easy mode</h1>
-      <button (click)="goToEasyPage(HomePage)">Go To About</button>
+      <div class="header_page">
+        <h1>Easy mode</h1>
+      </div>
+      <div class="subButton">
+        <div class="ico_block" (click)="goToEasyPage()">
+          <ion-icon ios="ios-play" md="md-play"></ion-icon>
+        </div>
+        <div class="ico_block">
+          <ion-icon ios="ios-color-palette" md="md-color-palette"></ion-icon>
+        </div>
+        <div class="ico_block">
+          <ion-icon ios="ios-share" md="md-share"></ion-icon>
+        </div>
+      </div>
+      <!-- <button (click)="goToEasyPage(HomePage)">Go To About</button> -->
     </ion-slide>
     <ion-slide class='nav2'>
-      <h1>Normal mode</h1>
-      <button (click)="goToNormalPage()">Go To About</button>
+      <div class="header_page">
+        <h1>Normal mode</h1>
+      </div>
+      <div class="subButton">
+        <div class="ico_block" (click)="goToNormalPage()">
+          <ion-icon ios="ios-play" md="md-play"></ion-icon>
+        </div>
+        <div class="ico_block">
+          <ion-icon ios="ios-color-palette" md="md-color-palette"></ion-icon>
+        </div>
+        <div class="ico_block">
+          <ion-icon ios="ios-share" md="md-share"></ion-icon>
+        </div>
+      </div>
     </ion-slide>
-    <!-- <ion-slide class='nav3'>
-      <h1>Slide 3</h1>
-    </ion-slide> -->
+    <ion-slide class='nav3'>
+      <div class="header_page">
+        <h1>Hard mode</h1>
+      </div>
+      <div class="subButton">
+        <div class="ico_block">
+          <ion-icon ios="ios-play" md="md-play"></ion-icon>
+        </div>
+        <div class="ico_block">
+          <ion-icon ios="ios-color-palette" md="md-color-palette"></ion-icon>
+        </div>
+        <div class="ico_block">
+          <ion-icon ios="ios-share" md="md-share"></ion-icon>
+        </div>
+      </div>
+    </ion-slide>
   </ion-slides>
 </ion-content>
