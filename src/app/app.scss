@@ -1,16 +1,64 @@
-// http://ionicframework.com/docs/theming/
+.back-button.show-back-button{
+  display: none;
+}
+page-easy, page-normal{
+  .question{
+    color:#fff;
+  }
+  .point{
+    color:#fff;
+  }
+  .toolbar-title-md{
+    display: flex;
+    justify-content: space-between;
+  }
+  .toolbar-background,.toolbar-title-ios{
+    background: #3c3c3c;
+    color:#f1f1f1;
 
+    // for IOS
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .scroll-content{
+    display: flex;
+    flex-wrap:wrap;
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+    .color{
+      width:50%;
+      position: relative;
+      display: flex;
+      justify-content:center;
+      align-items:center;
+
+      .helpersColor{
+        background: #3c3c3c;
+        color:#f1f1f1;
+        padding: 10px;
+      }
+    }
+    .startBlock{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // background: rgba(0, 0, 0, 0.2);
+
+      .contentRestart{
+        height: 80%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+
+        button{
+          background:#3c3c3c;
+          height: 45px;
+          line-height: 45px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
