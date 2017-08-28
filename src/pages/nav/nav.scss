@@ -21,7 +21,8 @@ page-nav {
     .ico_block{
       box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.3),0 2px 2px 0 rgba(0, 0, 0, 0.2);
       display: inline-block;
-      padding: 20px 28px;
+      height: 80px;
+      line-height: 80px;
     }
     .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:first-child{
       background-color: #6ED69A;
@@ -34,29 +35,75 @@ page-nav {
     }
     .swiper-pagination-bullet{
       opacity: 0.5;
+      transition: 0.5s;
     }
     .swiper-pagination-bullet-active{
       opacity: 1;
+      transform: scale(1.5);
     }
-
+    .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+      top:10px;
+    }
   }
-  .nav1{
-
+  .nav{
+    .helper{
+      position: absolute;
+      width: 96%;
+      height:300px;
+      left: 2%;
+      right:2%;
+      top:8%;
+      color: #fafafa;
+      background:#2B2E38;
+      padding: 5px;
+    }
     .slide-zoom{
       .header_page{
-        height: 50%;
+        height: calc( 100% - 130px);
         width: 100%;
         display: flex;
         align-items: center;
         justify-content:space-around;
+        flex-wrap:wrap;
+
+        h1{
+          align-self:flex-end;
+        }
+        .img-test{
+          height: 300px;
+          width: 100%;
+        }
       }
       .subButton{
-        height: 50%;
+        height: 80px;
+        margin-bottom: 50px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content:space-around;
 
+        .ico_block{
+          width: 100%;
+          display: flex;
+          flex-wrap: nowrap;
+
+          .btn_play{
+            width: 70%;
+          }
+          .btn_help{
+            width: 30%;
+            border-left: 1px solid rgba(0,0,0,0.1);
+          }
+          .btn_play:active, .btn_help:active{
+            background-color:rgba(0,0,0,0.1);
+          }
+        }
+      }
+    }
+  }
+  .nav1{
+    .slide-zoom{
+      .subButton{
         .ico_block{
           background-color: #6ED69A;
         }
@@ -65,47 +112,22 @@ page-nav {
   }
   .nav2{
     .slide-zoom{
-      .header_page{
-        height: 50%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content:space-around;
-      }
       .subButton{
-        height: 50%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content:space-around;
-
         .ico_block{
-          background-color: #0CC6FF;
+          background: linear-gradient(45deg, #1fa2ff 0%,#1f73ff 100%);
         }
       }
     }
   }
   .nav3{
     .slide-zoom{
-      .header_page{
-        height: 50%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content:space-around;
-      }
       .subButton{
-        height: 50%;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content:space-around;
-
         .ico_block{
           background-color: #F85465;
         }
       }
     }
   }
+
 
 }
