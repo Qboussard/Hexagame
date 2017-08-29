@@ -18,6 +18,7 @@ export class NavPage {
   helpeasy: boolean = false;
   helpnormal: boolean = false;
   helphard: boolean = false;
+  helpdoom: boolean = false;
 
   toggleHelp(difficulty){
   console.log(this.helphard);
@@ -41,6 +42,13 @@ export class NavPage {
           this.helphard = true;
         else
           this.helphard = false;
+        break;
+      }
+      case "doom": {
+        if(this.helpdoom == false)
+          this.helpdoom = true;
+        else
+          this.helpdoom = false;
         break;
       }
     }

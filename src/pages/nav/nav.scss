@@ -32,6 +32,9 @@ page-nav {
     .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(3){
       background-color: #F85465;
     }
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(4){
+      background-color: #FCC015;
+    }
     .swiper-pagination-bullet{
       opacity: 0.5;
       transition: 0.5s;
@@ -132,6 +135,16 @@ page-nav {
         .ico_block{
           background: linear-gradient(45deg, #F85465 0%,#D61834 100%);
           box-shadow: 0px 6px 0px #D61834, 0px 3px 15px rgba(0,0,0,.4);
+        }
+      }
+    }
+  }
+  .nav4{
+    .slide-zoom{
+      .subButton{
+        .ico_block{
+          background: linear-gradient(45deg, #ffd970 0%,#FCC015 100%);
+          box-shadow: 0px 6px 0px #FCC015, 0px 3px 15px rgba(0,0,0,.4);
         }
       }
     }

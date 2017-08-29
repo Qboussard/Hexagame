@@ -57,5 +57,24 @@
         <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
       </div>
     </ion-slide>
+    <ion-slide class='nav4 nav'>
+      <div class="header_page">
+        <h1>Doom mode</h1>
+        <div class="img-level"><img src="assets/img/men2.png" alt=""></div>
+      </div>
+      <div class="subButton">
+        <div class="ico_block">
+          <div class="btn_play">
+            <ion-icon ios="md-play" md="md-play"></ion-icon>
+          </div>
+          <div class="btn_help" (click)="toggleHelp('doom')">
+            <ion-icon ios="md-help" md="md-help"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="helper" *ngIf="helpdoom">
+        <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
+      </div>
+    </ion-slide>
   </ion-slides>
 </ion-content>
