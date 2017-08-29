@@ -6,7 +6,6 @@
   font-size: 2.2em;
 }
 page-nav {
-
   .slides{
     background-color: #363A46;
     color:#444444;
@@ -19,7 +18,7 @@ page-nav {
       flex-wrap: wrap;
     }
     .ico_block{
-      box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.3),0 2px 2px 0 rgba(0, 0, 0, 0.2);
+      // box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.3),0 2px 2px 0 rgba(0, 0, 0, 0.2);
       display: inline-block;
       height: 80px;
       line-height: 80px;
@@ -49,13 +48,14 @@ page-nav {
     .helper{
       position: absolute;
       width: 96%;
-      height:300px;
+      height: 300px;
       left: 2%;
-      right:2%;
-      top:8%;
+      right: 2%;
+      top: 22%;
       color: #fafafa;
-      background:rgba(0,0,0,0.6);
+      background: rgba(0, 0, 0, 0.6);
       padding: 5px;
+      font-size: 25px;
     }
     .slide-zoom{
       .header_page{
@@ -111,6 +111,7 @@ page-nav {
       .subButton{
         .ico_block{
           background: linear-gradient(45deg, #6ED69A 0%,#28b15f 100%);
+          box-shadow: 0px 6px 0px #28b15f, 0px 3px 15px rgba(0,0,0,.4);
         }
       }
     }
@@ -120,6 +121,7 @@ page-nav {
       .subButton{
         .ico_block{
           background: linear-gradient(45deg, #1fa2ff 0%,#2E77C0 100%);
+          box-shadow: 0px 6px 0px #2E77C0, 0px 3px 15px rgba(0,0,0,.4);
         }
       }
     }
@@ -129,10 +131,9 @@ page-nav {
       .subButton{
         .ico_block{
           background: linear-gradient(45deg, #F85465 0%,#D61834 100%);
+          box-shadow: 0px 6px 0px #D61834, 0px 3px 15px rgba(0,0,0,.4);
         }
       }
     }
   }
-
-
 }

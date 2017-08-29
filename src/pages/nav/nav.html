@@ -1,5 +1,5 @@
 <ion-content>
-  <ion-slides loop="true" autoplay="false" zoom="false" pager='true'>
+  <ion-slides loop="false" autoplay="false" zoom="false" pager='true'>
     <ion-slide class='nav1 nav'>
       <div class="header_page">
         <h1>Easy mode</h1>
@@ -10,12 +10,12 @@
           <div class="btn_play" (click)="goToEasyPage()">
             <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
-          <div class="btn_help" (click)="toggleHelp()">
+          <div class="btn_help" (click)="toggleHelp('easy')">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="help">
+      <div class="helper" *ngIf="helpeasy">
         <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
       </div>
     </ion-slide>
@@ -29,12 +29,12 @@
           <div class="btn_play" (click)="goToNormalPage()">
             <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
-          <div class="btn_help" (click)="toggleHelp()">
+          <div class="btn_help" (click)="toggleHelp('normal')">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="help">
+      <div class="helper" *ngIf="helpnormal">
         <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
       </div>
     </ion-slide>
@@ -48,12 +48,12 @@
           <div class="btn_play">
             <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
-          <div class="btn_help" (click)="toggleHelp()">
+          <div class="btn_help" (click)="toggleHelp('hard')">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="help">
+      <div class="helper" *ngIf="helphard">
         <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
       </div>
     </ion-slide>
