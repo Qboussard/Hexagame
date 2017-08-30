@@ -99,10 +99,16 @@ page-nav {
 
           .btn_play{
             width: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
           .btn_help{
             width: 30%;
             border-left: 1px solid rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
           }
           .btn_play:active, .btn_help:active{
             background-color:rgba(0,0,0,0.1);
