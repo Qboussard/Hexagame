@@ -1,15 +1,17 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-normal',
   templateUrl: 'normal.html'
 })
 export class NormalPage {
-  constructor(public navCtrl: NavController) {}
+  constructor(public navCtrl: NavController, private storage: Storage) {}
 
   possible: string = "0123456789ABCDEF";
   point: number = 0;
+  bestPoint: boolean;
   nbColors: number[] = [2, 4, 6];
   difficulty: number = 0;
   hexa: string = "#";
@@ -41,16 +43,27 @@ export class NormalPage {
     if (this.point >= 5 && this.point < 10) return this.difficulty = 1;
     if (this.point >= 10)                   return this.difficulty = 2;
   }
-
   checkResponse(userChoice){
-    if(userChoice != this.goodColor) return this.fail = 1;
+    if(userChoice != this.goodColor) return this.wrongResponse();
     this.point++;
     this.ngOnInit();
   }
-
+  wrongResponse(){
+    this.fail = 1;
+    this.defineBestScore();
+  }
+  defineBestScore(){
+    this.storage.get('bestScoreNormal').then((val) => {
+      if (val == null || this.point > val) {
+        this.storage.set('bestScoreNormal', this.point);
+        this.bestPoint = true;
+      }
+    });
+  }
   reset(){
     this.point = 0;
     this.fail = 0;
+    this.bestPoint = false;
   }
 
   ngOnInit(){
