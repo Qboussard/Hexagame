@@ -52,6 +52,10 @@ page-easy, page-normal{
         display: flex;
         align-items: center;
 
+        div {
+          margin: auto;
+        }
+
         button{
           background:#3c3c3c;
           height: 45px;
