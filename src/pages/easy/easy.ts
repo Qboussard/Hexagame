@@ -35,9 +35,12 @@ export class EasyPage {
     i: number = 0;
     k: number = 1;
 
+    getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
 
     generateColorCode(){
-      this.color = this.possible[Math.floor(Math.random() * this.possible.length)];
+      this.color = this.possible[this.getRandomInt(0, this.possible.length - 1)];
       return this.color;
     }
 
@@ -61,11 +64,13 @@ export class EasyPage {
           }
        }
     }
+    reset(){
+      this.point = 0;
+      this.fail = 0;
+    }
+
     ngOnInit(){
-      if(this.fail == 1){
-        this.point = 0;
-        this.fail = 0;
-      }
+      if(this.fail == 1) this.reset();
 
       this.colors = [];
       this.setDifficulty();

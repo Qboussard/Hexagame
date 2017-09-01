@@ -22,12 +22,16 @@ export class NormalPage {
   i: number = 0;
   k: number = 1;
 
+  getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
 
   generateColorCode(){
     this.i = 0;
     this.hexa = "#";
     for( this.i=1 ; this.i <= 6 ; this.i++){
-  		this.hexa = this.hexa + this.possible.charAt(Math.floor(Math.random() * this.possible.length));
+      var randomInt = this.getRandomInt(0, this.possible.length - 1);
+  		this.hexa += this.possible[randomInt];
   	}
     return this.hexa;
   }
@@ -44,11 +48,13 @@ export class NormalPage {
     this.ngOnInit();
   }
 
+  reset(){
+    this.point = 0;
+    this.fail = 0;
+  }
+
   ngOnInit(){
-    if(this.fail == 1){
-      this.point = 0;
-      this.fail = 0;
-    }
+    if(this.fail == 1) this.reset();
 
     this.colors = [];
     this.setDifficulty();
