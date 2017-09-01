@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { SocialSharing } from '@ionic-native/social-sharing';
-import { Screenshot } from '@ionic-native/screenshot';
+import { ShareService} from '../../providers/share-service';
 
 /**
  * Generated class for the EasyPage page.
@@ -16,7 +15,7 @@ import { Screenshot } from '@ionic-native/screenshot';
 })
 export class EasyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing, private screenshot: Screenshot) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private shareService: ShareService) {
   }
 
 
@@ -71,17 +70,7 @@ export class EasyPage {
     this.fail = 0;
   }
   shareScore(){
-    this.screenshot.URI(80)
-    .then((res) => {
-      this.socialSharing.share('', '', res.URI)
-      .then(() => {},
-        () => {
-          alert('SocialSharing failed');
-        });
-    },
-    () => {
-      alert('Screenshot failed');
-    });
+    this.shareService.shareScreenshot();
   }
   ngOnInit(){
     if(this.fail == 1) this.reset();

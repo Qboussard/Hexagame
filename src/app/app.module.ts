@@ -7,6 +7,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { Screenshot } from '@ionic-native/screenshot';
 
 import { MyApp } from './app.component';
+import { ShareService } from '../providers/share-service';
 import { NormalPage } from '../pages/normal/normal';
 import { EasyPage } from '../pages/easy/easy';
 import { NavPage } from '../pages/nav/nav';
@@ -34,6 +35,7 @@ import { NavPage } from '../pages/nav/nav';
     SplashScreen,
     SocialSharing,
     Screenshot,
+    ShareService,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })
