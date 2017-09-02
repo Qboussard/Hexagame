@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ShareService} from '../../providers/share-service';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -7,7 +8,7 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'normal.html'
 })
 export class NormalPage {
-  constructor(public navCtrl: NavController, private storage: Storage) {}
+  constructor(public navCtrl: NavController, private shareService: ShareService, private storage: Storage) {}
 
   possible: string = "0123456789ABCDEF";
   point: number = 0;
@@ -65,7 +66,9 @@ export class NormalPage {
     this.fail = 0;
     this.bestPoint = false;
   }
-
+  shareScore(){
+    this.shareService.shareScreenshot();
+  }
   ngOnInit(){
     if(this.fail == 1) this.reset();
 

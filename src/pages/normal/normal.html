@@ -17,9 +17,15 @@
       <div>{{point}}</div>
     </div>
     <div class="contentRestart">
-      <button ion-button block (click)="ngOnInit()">Rejouer</button>
+      <div>
+        <button ion-button block (click)="ngOnInit()">Rejouer</button>
+      </div>
+      <div>
+        <button ion-button icon-only (click)='shareScore();'>
+          <ion-icon ios="ios-share" md="md-share"></ion-icon>
+        </button>
+      </div>
     </div>
-
   </div>
 
 
