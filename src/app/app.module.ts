@@ -5,6 +5,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Screenshot } from '@ionic-native/screenshot';
+import { IonicStorageModule } from '@ionic/storage';
 
 import { MyApp } from './app.component';
 import { ShareService } from '../providers/share-service';
@@ -21,7 +22,8 @@ import { NavPage } from '../pages/nav/nav';
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

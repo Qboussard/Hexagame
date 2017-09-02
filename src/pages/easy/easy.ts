@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ShareService} from '../../providers/share-service';
-
-/**
- * Generated class for the EasyPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-easy',
@@ -15,14 +9,14 @@ import { ShareService} from '../../providers/share-service';
 })
 export class EasyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private shareService: ShareService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private shareService: ShareService, private storage: Storage) {
   }
-
 
   possible: Array<any> = [
   "AliceBlue","Aqua","Aquamarine","Azure","Beige","Black","Blue","BlueViolet","Brown","BurlyWood","CadetBlue","Chartreuse","Chocolate","Coral","CornflowerBlue","Crimson","Cyan","DarkBlue","DarkCyan","DarkGoldenRod","DarkGrey","DarkGreen","DarkKhaki","DarkMagenta","DarkOliveGreen","DarkOrange","DarkOrchid","DarkRed","DarkSalmon","DarkSeaGreen","DarkSlateBlue","DarkSlateGrey","DarkTurquoise","DarkViolet","DeepPink","DeepSkyBlue","DimGrey","DodgerBlue","FireBrick","FloralWhite","ForestGreen","Fuchsia","Gainsboro","GhostWhite","Gold","GoldenRod","Grey","Green","GreenYellow","HotPink","IndianRed","Indigo","Ivory","Khaki","Lavender","LavenderBlush","LawnGreen","LemonChiffon","LightBlue","LightCoral","LightCyan","LightGrey","LightGreen","LightPink","LightSalmon","LightSeaGreen","LightSkyBlue","LightSlateGrey","LightSteelBlue","LightYellow","LimeGreen","Magenta","Maroon","MidnightBlue","Olive","Orange","OrangeRed","Orchid","PaleGreen","PaleTurquoise","PaleVioletRed","Pink","Purple","Red","RoyalBlue","SaddleBrown","Salmon","SeaGreen","Silver","SkyBlue","Snow","SpringGreen","SteelBlue","Teal","Tomato","Turquoise","Violet","White","WhiteSmoke","Yellow","YellowGreen"
   ];
   point: number = 0;
+  bestPoint: boolean;
   nbColors: number[] = [2, 4, 6, 8];
   difficulty: number = 0;
   hexa: string = "#";
@@ -31,7 +25,6 @@ export class EasyPage {
   colors: Array<any> = [];
   fail: number = 0;
   testcolor: boolean;
-
 
   i: number = 0;
   k: number = 1;
@@ -51,23 +44,35 @@ export class EasyPage {
     if (this.point >= 10 && this.point < 15)  return this.difficulty = 2;
     if (this.point >= 15)                     return this.difficulty = 3;
   }
-
   checkResponse(userChoice){
-    if(userChoice != this.goodColor) return this.fail = 1;
+    if(userChoice != this.goodColor) return this.wrongResponse();
     this.point++;
     this.ngOnInit();
   }
+  wrongResponse(){
+    this.fail = 1;
+    this.defineBestScore();
+  }
   checkColorArray(obj){
     for(let i = 0; i<=this.colors.length; i++) {
-        if (this.colors[i] == obj){
-          this.color = this.generateColorCode();
-          this.checkColorArray(this.color);
-        }
-     }
+      if (this.colors[i] == obj){
+        this.color = this.generateColorCode();
+        this.checkColorArray(this.color);
+      }
+    }
+  }
+  defineBestScore(){
+    this.storage.get('bestScoreEasy').then((val) => {
+      if (val == null || this.point > val) {
+        this.storage.set('bestScoreEasy', this.point);
+        this.bestPoint = true;
+      }
+    });
   }
   reset(){
     this.point = 0;
     this.fail = 0;
+    this.bestPoint = false;
   }
   shareScore(){
     this.shareService.shareScreenshot();
