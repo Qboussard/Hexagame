@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the EasyPage page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-easy',
@@ -14,7 +8,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class EasyPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage) {
   }
 
 
@@ -22,6 +16,7 @@ export class EasyPage {
     "AliceBlue","Aqua","Aquamarine","Azure","Beige","Black","Blue","BlueViolet","Brown","BurlyWood","CadetBlue","Chartreuse","Chocolate","Coral","CornflowerBlue","Crimson","Cyan","DarkBlue","DarkCyan","DarkGoldenRod","DarkGrey","DarkGreen","DarkKhaki","DarkMagenta","DarkOliveGreen","DarkOrange","DarkOrchid","DarkRed","DarkSalmon","DarkSeaGreen","DarkSlateBlue","DarkSlateGrey","DarkTurquoise","DarkViolet","DeepPink","DeepSkyBlue","DimGrey","DodgerBlue","FireBrick","FloralWhite","ForestGreen","Fuchsia","Gainsboro","GhostWhite","Gold","GoldenRod","Grey","Green","GreenYellow","HotPink","IndianRed","Indigo","Ivory","Khaki","Lavender","LavenderBlush","LawnGreen","LemonChiffon","LightBlue","LightCoral","LightCyan","LightGrey","LightGreen","LightPink","LightSalmon","LightSeaGreen","LightSkyBlue","LightSlateGrey","LightSteelBlue","LightYellow","LimeGreen","Magenta","Maroon","MidnightBlue","Olive","Orange","OrangeRed","Orchid","PaleGreen","PaleTurquoise","PaleVioletRed","Pink","Purple","Red","RoyalBlue","SaddleBrown","Salmon","SeaGreen","Silver","SkyBlue","Snow","SpringGreen","SteelBlue","Teal","Tomato","Turquoise","Violet","White","WhiteSmoke","Yellow","YellowGreen"
     ];
     point: number = 0;
+    bestPoint: boolean;
     nbColors: number[] = [2, 4, 6, 8];
     difficulty: number = 0;
     hexa: string = "#";
@@ -52,9 +47,13 @@ export class EasyPage {
     }
 
     checkResponse(userChoice){
-      if(userChoice != this.goodColor) return this.fail = 1;
+      if(userChoice != this.goodColor) return this.wrongResponse();
       this.point++;
       this.ngOnInit();
+    }
+    wrongResponse(){
+      this.fail = 1;
+      this.defineBestScore();
     }
     checkColorArray(obj){
       for(let i = 0; i<=this.colors.length; i++) {
@@ -64,9 +63,18 @@ export class EasyPage {
           }
        }
     }
+    defineBestScore(){
+      this.storage.get('bestScoreEasy').then((val) => {
+        if (val == null || this.point > val) {
+          this.storage.set('bestScoreEasy', this.point);
+          this.bestPoint = true;
+        }
+      });
+    }
     reset(){
       this.point = 0;
       this.fail = 0;
+      this.bestPoint = false;
     }
 
     ngOnInit(){
