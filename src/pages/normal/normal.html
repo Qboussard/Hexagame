@@ -12,10 +12,20 @@
     <span class='helpersColor' [hidden]="!fail" >{{color}}</span>
   </div>
   <div class="startBlock" [hidden]="!fail">
-    <div class="contentRestart">
-      <button ion-button block (click)="ngOnInit()">Rejouer</button>
+    <div class='best-score-container' [hidden]="!bestPoint">
+      <ion-icon name="trophy"></ion-icon>
+      <div>{{point}}</div>
     </div>
-
+    <div class="contentRestart">
+      <div>
+        <button ion-button block (click)="ngOnInit()">Rejouer</button>
+      </div>
+      <div>
+        <button ion-button icon-only (click)='shareScore();'>
+          <ion-icon ios="ios-share" md="md-share"></ion-icon>
+        </button>
+      </div>
+    </div>
   </div>
 
 
