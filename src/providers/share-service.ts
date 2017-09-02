@@ -1,6 +1,6 @@
 import { SocialSharing } from '@ionic-native/social-sharing';
 import { Screenshot } from '@ionic-native/screenshot';
-import {Injectable} from "@angular/core";
+import { Injectable } from "@angular/core";
 
 @Injectable()
 export class ShareService {
@@ -9,14 +9,17 @@ export class ShareService {
   shareScreenshot() {
     this.screenshot.URI(80)
     .then((res) => {
-      this.socialSharing.share('', '', res.URI)
-      .then(() => {},
-        () => {
-          alert('SocialSharing failed');
-        });
+      this.sharePicture(res.URI)
     },
     () => {
       alert('Screenshot failed');
+    });
+  }
+
+  sharePicture(picture) {
+    this.socialSharing.share('', '', picture).then(() => {},
+    () => {
+      alert('SocialSharing failed');
     });
   }
 }
