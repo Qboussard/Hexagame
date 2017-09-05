@@ -20,6 +20,7 @@ export class NormalPage {
   color: string;
   colors: Array<any> = [];
   fail: number = 0;
+  record: number;
 
 
   i: number = 0;
@@ -59,6 +60,7 @@ export class NormalPage {
         this.storage.set('bestScoreNormal', this.point);
         this.bestPoint = true;
       }
+      this.record = val;
     });
   }
   reset(){
