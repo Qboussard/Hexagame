@@ -15,6 +15,44 @@ export class NavPage {
 
   constructor(public navCtrl: NavController) {
   }
+  helpeasy: boolean = false;
+  helpnormal: boolean = false;
+  helphard: boolean = false;
+  helpdoom: boolean = false;
+
+  toggleHelp(difficulty){
+  console.log(this.helphard);
+    switch(difficulty) {
+      case "easy": {
+        if(this.helpeasy == false)
+          this.helpeasy = true;
+        else
+          this.helpeasy = false;
+        break;
+      }
+      case "normal": {
+        if(this.helpnormal == false)
+          this.helpnormal = true;
+        else
+          this.helpnormal = false;
+        break;
+      }
+      case "hard": {
+        if(this.helphard == false)
+          this.helphard = true;
+        else
+          this.helphard = false;
+        break;
+      }
+      case "doom": {
+        if(this.helpdoom == false)
+          this.helpdoom = true;
+        else
+          this.helpdoom = false;
+        break;
+      }
+    }
+  }
 
   @ViewChild(Slides) slides: Slides;
   goToSlide() {
