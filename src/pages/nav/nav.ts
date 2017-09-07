@@ -13,42 +13,28 @@ import { EasyPage } from '../easy/easy';
 })
 export class NavPage {
 
-  constructor(public navCtrl: NavController) {
-  }
+  constructor(public navCtrl: NavController) {}
   helpeasy: boolean = false;
   helpnormal: boolean = false;
   helphard: boolean = false;
   helpdoom: boolean = false;
 
   toggleHelp(difficulty){
-  console.log(this.helphard);
     switch(difficulty) {
       case "easy": {
-        if(this.helpeasy == false)
-          this.helpeasy = true;
-        else
-          this.helpeasy = false;
+        this.helpeasy = (this.helpeasy == false) ? true : false;
         break;
       }
       case "normal": {
-        if(this.helpnormal == false)
-          this.helpnormal = true;
-        else
-          this.helpnormal = false;
+        this.helpnormal = (this.helpnormal == false) ? true : false;
         break;
       }
       case "hard": {
-        if(this.helphard == false)
-          this.helphard = true;
-        else
-          this.helphard = false;
+        this.helphard = (this.helphard == false) ? true : false;
         break;
       }
       case "doom": {
-        if(this.helpdoom == false)
-          this.helpdoom = true;
-        else
-          this.helpdoom = false;
+        this.helpdoom = (this.helpdoom == false) ? true : false;
         break;
       }
     }
