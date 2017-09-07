@@ -1,5 +1,13 @@
 $primaryColor: #363A46;
 $secondaryColor: #fafafa;
+$scoreTrophyColor: #f5f5b8;
+
+@mixin transform($var...) {
+  -webkit-transform: $var;
+     -moz-transform: $var;
+      -ms-transform: $var;
+          transform: $var;
+}
 
 .back-button.show-back-button{
   display: none;
@@ -104,7 +112,7 @@ page-easy, page-normal{
         font-size: 30px;
         justify-content: center;
         align-items:center;
-
+        position: relative;
 
         .trophy{
           width: 150px;
@@ -133,11 +141,12 @@ page-easy, page-normal{
         .score_trophy{
           position: absolute;
           width: 100%;
-          color: $secondaryColor;
-          top: 97px;
+          color: $scoreTrophyColor;
+          top: calc(50% + 12px);
+          @include transform(translateY(-50%));
         }
         @keyframes play {
-            100% { background-position: -1500px; }
+          100% { background-position: -1500px; }
         }
       }
 
