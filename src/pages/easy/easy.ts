@@ -25,6 +25,7 @@ export class EasyPage {
   colors: Array<any> = [];
   fail: number = 0;
   testcolor: boolean;
+  record: number;
 
   i: number = 0;
   k: number = 1;
@@ -67,6 +68,7 @@ export class EasyPage {
         this.storage.set('bestScoreEasy', this.point);
         this.bestPoint = true;
       }
+      this.record = val;
     });
   }
   reset(){
@@ -94,5 +96,7 @@ export class EasyPage {
     }
     this.goodColor = this.colors[Math.floor(Math.random() * this.colors.length)];
   }
-
+  goToNavPage() {
+    this.navCtrl.pop()
+  }
 }
