@@ -1,0 +1,6 @@
+@mixin transform($var...) {
+  -webkit-transform: $var;
+     -moz-transform: $var;
+      -ms-transform: $var;
+          transform: $var;
+}

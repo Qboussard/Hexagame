@@ -1,0 +1,158 @@
+page-easy, page-normal{
+  .question{
+    color:$secondaryColor;
+  }
+  .point{
+    color:$secondaryColor;
+  }
+  .toolbar-title-md{
+    display: flex;
+    justify-content: space-between;
+  }
+  .toolbar-background,.toolbar-title-ios{
+    background: $primaryColor;
+    color:$secondaryColor;
+
+    // for IOS
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .scroll-content{
+    display: flex;
+    flex-wrap:wrap;
+
+    .color{
+      width:50%;
+      position: relative;
+      display: flex;
+      justify-content:center;
+      align-items:center;
+
+      .helpersColor{
+        background: #363A46;
+        color:#f1f1f1;
+        padding: 10px;
+      }
+      .shadowWrongResponse{
+        background-color: rgba(0,0,0,0.5);
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .startBlock{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // background: rgba(0, 0, 0, 0.2);
+
+      .score-container{
+        display: flex;
+        height: 40%;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        justify-content: space-around;
+        align-items:center;
+
+          .showPoint{
+            width:100%;
+            height:100%;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+
+            .circle{
+              width: 150px;
+              height: 150px;
+              background: $primaryColor;
+              border-radius: 50%;
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: center;
+              align-items:center;
+
+              h1,h2{
+                width: 100%;
+                margin:0;
+                color:$secondaryColor;
+              }
+              h1{
+                font-size: 1.3em;
+                align-self:flex-end;
+              }
+              h2{
+                font-size: 0.5em;
+                align-self:flex-start;
+              }
+            }
+          }
+      }
+      .best-score-container {
+        display: flex;
+        height: 40%;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+        justify-content: center;
+        align-items:center;
+        position: relative;
+
+        .trophy{
+          width: 150px;
+          height: 150px;
+          margin: 2% auto;
+
+          #medal .light{
+            animation: anim 3s infinite;
+          }
+
+          @keyframes anim {
+            0% {
+              x: 111.416;
+              y: 50.37;
+            }
+            100% {
+             x: 400;
+             y: 50;
+            }
+            50% {
+             x: 400;
+             y: 50;
+            }
+          }
+        }
+        .score_trophy{
+          position: absolute;
+          width: 100%;
+          color: $scoreTrophyColor;
+          top: calc(50% + 12px);
+          @include transform(translateY(-50%));
+        }
+        @keyframes play {
+          100% { background-position: -1500px; }
+        }
+      }
+
+
+      .contentRestart{
+        height: 60%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        button{
+          background:$primaryColor;
+          height: 45px;
+          width: 45%;
+          line-height: 45px;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
