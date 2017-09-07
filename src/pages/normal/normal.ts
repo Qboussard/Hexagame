@@ -83,5 +83,7 @@ export class NormalPage {
     }
     this.goodColor = this.colors[Math.floor(Math.random() * this.colors.length)];
   }
-
+  goToNavPage() {
+    this.navCtrl.pop()
+  }
 }

@@ -29,8 +29,12 @@
       </div>
     </div>
     <div class="contentRestart">
-      <button ion-button block>Home</button>
-      <button ion-button block (click)="ngOnInit()">Replay</button>
+      <button ion-button block (click)="goToNavPage()">
+        <ion-icon ios="ios-home" md="md-home"></ion-icon>
+      </button>
+      <button ion-button block (click)="ngOnInit()">
+        <ion-icon ios="ios-refresh" md="md-refresh"></ion-icon>
+      </button>
       <button ion-button block (click)='shareScore();'>
         <ion-icon ios="ios-share" md="md-share"></ion-icon>
       </button>
