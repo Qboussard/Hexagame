@@ -30,16 +30,16 @@ page-nav {
       line-height: 80px;
     }
     .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:first-child{
-      background-color: #6ED69A;
+      background-color: $easy-color-primary;
     }
     .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(2){
-      background-color: #0CC6FF;
+      background-color: $normal-color-other;
     }
     .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(3){
-      background-color: #F85465;
+      background-color: $hard-color-primary;
     }
     .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(4){
-      background-color: #FCC015;
+      background-color: $doom-color-secondary;
     }
     .swiper-pagination-bullet{
       opacity: 0.5;
@@ -121,44 +121,16 @@ page-nav {
       }
     }
   }
-  .nav1{
-    .slide-zoom{
-      .subButton{
-        .ico_block{
-          background: linear-gradient(45deg, #6ED69A 0%,#28b15f 100%);
-          box-shadow: 0px 6px 0px #28b15f, 0px 3px 15px rgba(0,0,0,.4);
-        }
-      }
-    }
+  .nav1 .slide-zoom .subButton .ico_block{
+    @include button-mode($easy-color-primary, $easy-color-secondary);
   }
-  .nav2{
-    .slide-zoom{
-      .subButton{
-        .ico_block{
-          background: linear-gradient(45deg, #1fa2ff 0%,#2E77C0 100%);
-          box-shadow: 0px 6px 0px #2E77C0, 0px 3px 15px rgba(0,0,0,.4);
-        }
-      }
-    }
+  .nav2 .slide-zoom .subButton .ico_block{
+    @include button-mode($normal-color-primary, $normal-color-secondary);
   }
-  .nav3{
-    .slide-zoom{
-      .subButton{
-        .ico_block{
-          background: linear-gradient(45deg, #F85465 0%,#D61834 100%);
-          box-shadow: 0px 6px 0px #D61834, 0px 3px 15px rgba(0,0,0,.4);
-        }
-      }
-    }
+  .nav3 .slide-zoom .subButton .ico_block{
+    @include button-mode($hard-color-primary, $hard-color-secondary);
   }
-  .nav4{
-    .slide-zoom{
-      .subButton{
-        .ico_block{
-          background: linear-gradient(45deg, #ffd970 0%,#FCC015 100%);
-          box-shadow: 0px 6px 0px #FCC015, 0px 3px 15px rgba(0,0,0,.4);
-        }
-      }
-    }
+  .nav4 .slide-zoom .subButton .ico_block{
+    @include button-mode($doom-color-primary, $doom-color-secondary);
   }
 }
