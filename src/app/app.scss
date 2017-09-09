@@ -40,8 +40,14 @@ page-easy, page-normal{
       width:50%;
       position: relative;
       display: flex;
-      justify-content:center;
-      align-items:center;
+      justify-content:flex-end;
+      align-items:flex-end;
+      padding: 5px;
+
+      #Capa_1{
+        width: 50px;
+        height: 50px;
+      }
 
       .helpersColor{
         background: #363A46;
