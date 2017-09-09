@@ -8,12 +8,12 @@
 
 <ion-content>
   <div *ngFor='let color of colors; trackBy: index;' [ngStyle]="{'background':color}" class="color" (click)="checkResponse(color)" >
-    <div class="shadowWrongResponse" *ngIf="fail && color != goodColor"></div>
+    <div class="shadow-wrong-response" *ngIf="fail && color != goodColor"></div>
     <!-- <span class='helpersColor' [hidden]="!fail" >{{color}}</span> -->
   </div>
-  <div class="startBlock" [hidden]="!fail">
+  <div class="start-block" [hidden]="!fail">
     <div class='score-container' [hidden]="bestPoint">
-      <div class="showPoint">
+      <div class="show-point">
           <div class="circle">
             <h1>{{point}}</h1>
             <h2>Best : {{record}}</h2>
@@ -22,11 +22,11 @@
     </div>
     <div class='best-score-container' [hidden]="!bestPoint">
       <trophy class="trophy"></trophy>
-      <div class="score_trophy">
+      <div class="score-trophy">
         {{point}}
       </div>
     </div>
-    <div class="contentRestart">
+    <div class="content-restart">
       <button ion-button block (click)="goToNavPage()">
         <ion-icon ios="ios-home" md="md-home"></ion-icon>
       </button>

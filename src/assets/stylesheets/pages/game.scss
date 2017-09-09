@@ -34,13 +34,13 @@ page-easy, page-normal{
         color:#f1f1f1;
         padding: 10px;
       }
-      .shadowWrongResponse{
+      .shadow-wrong-response{
         background-color: rgba(0,0,0,0.5);
         width: 100%;
         height: 100%;
       }
     }
-    .startBlock{
+    .start-block{
       position: absolute;
       top: 0;
       left: 0;
@@ -57,7 +57,7 @@ page-easy, page-normal{
         justify-content: space-around;
         align-items:center;
 
-          .showPoint{
+          .show-point{
             width:100%;
             height:100%;
             display: flex;
@@ -124,7 +124,7 @@ page-easy, page-normal{
             }
           }
         }
-        .score_trophy{
+        .score-trophy{
           position: absolute;
           width: 100%;
           color: $scoreTrophyColor;
@@ -137,7 +137,7 @@ page-easy, page-normal{
       }
 
 
-      .contentRestart{
+      .content-restart{
         height: 60%;
         width: 100%;
         display: flex;
