@@ -1,17 +1,17 @@
 page-easy, page-normal{
   .question{
-    color:$secondaryColor;
+    color:$secondary-color;
   }
   .point{
-    color:$secondaryColor;
+    color:$secondary-color;
   }
   .toolbar-title-md{
     display: flex;
     justify-content: space-between;
   }
   .toolbar-background,.toolbar-title-ios{
-    background: $primaryColor;
-    color:$secondaryColor;
+    background: $primary-color;
+    color:$secondary-color;
 
     // for IOS
     width: 100%;
@@ -30,7 +30,7 @@ page-easy, page-normal{
       align-items:center;
 
       .helpersColor{
-        background: $primaryColor;
+        background: $primary-color;
         color:#f1f1f1;
         padding: 10px;
       }
@@ -67,7 +67,7 @@ page-easy, page-normal{
             .circle{
               width: 150px;
               height: 150px;
-              background: $primaryColor;
+              background: $primary-color;
               border-radius: 50%;
               display: flex;
               flex-wrap: wrap;
@@ -77,7 +77,7 @@ page-easy, page-normal{
               h1,h2{
                 width: 100%;
                 margin:0;
-                color:$secondaryColor;
+                color:$secondary-color;
               }
               h1{
                 font-size: 1.3em;
@@ -127,7 +127,7 @@ page-easy, page-normal{
         .score-trophy{
           position: absolute;
           width: 100%;
-          color: $scoreTrophyColor;
+          color: $score-trophy-color;
           top: calc(50% + 12px);
           @include transform(translateY(-50%));
         }
@@ -146,7 +146,7 @@ page-easy, page-normal{
         justify-content: space-around;
 
         button{
-          background:$primaryColor;
+          background:$primary-color;
           height: 45px;
           width: 45%;
           line-height: 45px;
