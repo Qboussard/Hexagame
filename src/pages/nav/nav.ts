@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 
+import { HardPage } from '../hard/hard';
 import { NormalPage } from '../normal/normal';
 import { EasyPage } from '../easy/easy';
 
@@ -50,5 +51,8 @@ export class NavPage {
   }
   goToNormalPage() {
     this.navCtrl.push(NormalPage);
+  }
+  goToHardPage() {
+    this.navCtrl.push(HardPage);
   }
 }
