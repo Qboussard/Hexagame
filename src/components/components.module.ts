@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { TrophyComponent } from './trophy/trophy';
 @NgModule({
-	declarations: [
+  declarations: [
     TrophyComponent
   ],
-	imports: [],
-	exports: [
+  imports: [],
+  exports: [
     TrophyComponent
   ]
 })

@@ -10,7 +10,6 @@ import { Storage } from '@ionic/storage';
 export class EasyPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private shareService: ShareService, private storage: Storage) {
-    this.storage.remove('bestScoreEasy')
   }
 
   possible: Array<any> = [
