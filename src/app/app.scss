@@ -43,10 +43,14 @@ page-easy, page-normal{
       justify-content:flex-end;
       align-items:flex-end;
       padding: 5px;
+      position: relative;
 
       #Capa_1{
         width: 50px;
         height: 50px;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
       }
 
       .helpersColor{
