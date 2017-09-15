@@ -2,15 +2,15 @@ page-easy {
   .toolbar{
     box-shadow: 0px 6px 0px #28b15f, 0px 3px 15px rgba(0,0,0,.4);
   }
-  .startBlock{
-    .circle{
-      box-shadow: 0px 0px 0px 8px #28b15f, 0px 3px 15px rgba(0, 0, 0, 0.4);
-    }
-    .contentRestart button{
-      box-shadow: 0px 6px 0px #28b15f, 0px 3px 15px rgba(0,0,0,.4);
-    }
+  .circle{
+    box-shadow: 0px 0px 0px 8px #28b15f, 0px 3px 15px rgba(0, 0, 0, 0.4);
+  }
+  .button{
+    box-shadow: 0px 6px 0px #28b15f, 0px 3px 15px rgba(0,0,0,.4);
+  }
+  .trophy{
+    box-shadow: 0px 0px 0px 8px #28b15f, 0px 3px 15px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
   }
 }
-.trophy{
-  box-shadow: 0px 0px 0px 8px #28b15f, 0px 3px 15px rgba(0, 0, 0, 0.4);
-}
+
