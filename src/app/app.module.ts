@@ -16,6 +16,7 @@ import { NavPage } from '../pages/nav/nav';
 import { TrophyComponent } from '../components/trophy/trophy';
 import { ResponseComponent } from '../components/response/response';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -24,6 +25,7 @@ import { ResponseComponent } from '../components/response/response';
     NavPage,
     TrophyComponent,
     ResponseComponent
+
   ],
   imports: [
     BrowserModule,
