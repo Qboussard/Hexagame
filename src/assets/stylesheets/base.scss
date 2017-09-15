@@ -1,0 +1,8 @@
+@import "variables";
+@import "mixins";
+
+.back-button.show-back-button{
+  display: none;
+}
+
+@import "pages/game";
