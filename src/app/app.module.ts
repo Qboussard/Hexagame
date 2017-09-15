@@ -14,8 +14,6 @@ import { EasyPage } from '../pages/easy/easy';
 import { NavPage } from '../pages/nav/nav';
 
 import { TrophyComponent } from '../components/trophy/trophy';
-import { ResponseComponent } from '../components/response/response';
-
 
 @NgModule({
   declarations: [
@@ -23,9 +21,7 @@ import { ResponseComponent } from '../components/response/response';
     NormalPage,
     EasyPage,
     NavPage,
-    TrophyComponent,
-    ResponseComponent
-
+    TrophyComponent
   ],
   imports: [
     BrowserModule,

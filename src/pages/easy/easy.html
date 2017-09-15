@@ -8,7 +8,7 @@
 
 <ion-content>
   <div *ngFor='let color of colors; trackBy: index;' [ngStyle]="{'background':color}" class="color" (click)="checkResponse(color)" >
-    <response class="check-response" *ngIf='fail && color == goodColor'></response>
+    <img src="assets/img/response.svg" class="check-response" *ngIf='fail && color == goodColor'>
   </div>
   <div class="start-block" [hidden]="!fail">
     <div class='score-container' [hidden]="bestPoint">

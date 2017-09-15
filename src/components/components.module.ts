@@ -1,15 +1,12 @@
 import { NgModule } from '@angular/core';
 import { TrophyComponent } from './trophy/trophy';
-import { ResponseComponent } from './response/response';
 @NgModule({
   declarations: [
-    TrophyComponent,
-    ResponseComponent
+    TrophyComponent
   ],
   imports: [],
   exports: [
-    TrophyComponent,
-    ResponseComponent
+    TrophyComponent
   ]
 })
 export class ComponentsModule {}
