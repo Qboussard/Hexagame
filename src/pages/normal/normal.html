@@ -8,8 +8,7 @@
 
 <ion-content>
   <div *ngFor='let color of colors; trackBy: index;' [ngStyle]="{'background':color}" class="color" (click)="checkResponse(color)" >
-    <div class="shadowWrongResponse" *ngIf="fail && color != goodColor"></div>
-    <!-- <span class='helpersColor' [hidden]="!fail" >{{color}}</span> -->
+    <svg id="Capa_1" *ngIf="fail && color == goodColor" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 422.8 327.32"><title>correct</title><path d="M418.28,107.86,382.41,72a25.47,25.47,0,0,0-35.87,0l-173,173.28L96,167.46a24.41,24.41,0,0,0-17.93-7.38,24.42,24.42,0,0,0-17.94,7.38L24.25,203.33a25.47,25.47,0,0,0,0,35.87l95.47,95.47,35.87,35.87a25.47,25.47,0,0,0,35.87,0l35.87-35.87L418.28,143.73a25.47,25.47,0,0,0,0-35.87Z" transform="translate(-9.87 -57.61)" fill="rgba(255,255,255,0.2)" stroke="rgba(0,0,0,0.2)" stroke-miterlimit="10" stroke-width="14"/></svg>
   </div>
   <div class="startBlock" [hidden]="!fail">
     <div class='score-container' [hidden]="bestPoint">
