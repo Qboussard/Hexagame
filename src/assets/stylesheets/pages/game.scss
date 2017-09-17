@@ -1,4 +1,7 @@
 page-easy, page-normal, page-hard{
+  .header-md::after{
+    background-image: none !important;
+  }
   .question{
     color:$secondary-color;
   }
