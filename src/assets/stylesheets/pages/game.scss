@@ -26,8 +26,17 @@ page-easy, page-normal, page-hard{
       width:50%;
       position: relative;
       display: flex;
-      justify-content:center;
-      align-items:center;
+      justify-content:flex-end;
+      align-items:flex-end;
+      padding: 5px;
+
+      .check-response{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+      }
 
       .helpersColor{
         background: $primary-color;
