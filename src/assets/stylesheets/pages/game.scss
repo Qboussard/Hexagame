@@ -167,4 +167,14 @@ page-easy, page-normal, page-hard{
       }
     }
   }
+
+}
+
+.page-lock {
+  background-color: rgba(0,0,0,0.6);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }

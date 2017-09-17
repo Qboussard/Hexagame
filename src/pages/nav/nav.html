@@ -72,6 +72,7 @@
       </div>
     </ion-slide>
     <ion-slide class='nav2 nav'>
+      <div class='page-lock' *ngIf="recordEasy < 15"></div>
       <div class="header-page">
         <h1>Normal mode</h1>
         <div class="img-level">
@@ -126,7 +127,8 @@
       <div class="sub-button">
         <div class="ico-block" >
           <div class="btn-play" (click)="goToNormalPage()">
-            <ion-icon ios="md-play" md="md-play"></ion-icon>
+            <ion-icon ios="md-play" md="md-play" *ngIf="recordEasy > 14"></ion-icon>
+            <ion-icon ios="ios-lock" md="md-lock" *ngIf="recordEasy < 15"></ion-icon>
           </div>
           <div class="btn-help" (click)="toggleHelp('normal')" [ngClass]="{'active': helpNormal}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
@@ -138,6 +140,7 @@
       </div>
     </ion-slide>
     <ion-slide class='nav3 nav'>
+      <div class='page-lock' *ngIf="recordNormal < 15">Débloquer le mode de jeu en faisant un score de 15 au mode normal</div>
       <div class="header-page">
         <h1>Hard mode</h1>
         <div class="img-level">
@@ -208,7 +211,8 @@
       <div class="sub-button">
         <div class="ico-block">
           <div class="btn-play" (click)="goToHardPage()">
-            <ion-icon ios="md-play" md="md-play"></ion-icon>
+            <ion-icon ios="md-play" md="md-play" *ngIf="recordNormal > 14"></ion-icon>
+            <ion-icon ios="ios-lock" md="md-lock" *ngIf="recordNormal < 15"></ion-icon>
           </div>
           <div class="btn-help" (click)="toggleHelp('hard')" [ngClass]="{'active': helpHard}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
