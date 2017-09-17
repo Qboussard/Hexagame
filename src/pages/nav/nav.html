@@ -60,12 +60,12 @@
           <div class="btn-play" (click)="goToEasyPage()">
             <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
-          <div class="btn-help" (click)="toggleHelp('easy')" [ngClass]="{'active': helpeasy}">
+          <div class="btn-help" (click)="toggleHelp('easy')" [ngClass]="{'active': helpEasy}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="helpeasy">
+      <div class="helper" *ngIf="helpEasy">
         <span>
           Trouvez la bonne couleur à partir de son nom HTML en haut de l'écran
         </span>
@@ -128,12 +128,12 @@
           <div class="btn-play" (click)="goToNormalPage()">
             <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
-          <div class="btn-help" (click)="toggleHelp('normal')" [ngClass]="{'active': helpnormal}">
+          <div class="btn-help" (click)="toggleHelp('normal')" [ngClass]="{'active': helpNormal}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="helpnormal">
+      <div class="helper" *ngIf="helpNormal">
         <span>Trouvez la bonne couleur à partir de son nom HTML en haut de l'écran en moins de 3 secondes !</span>
       </div>
     </ion-slide>
@@ -210,12 +210,12 @@
           <div class="btn-play" (click)="goToHardPage()">
             <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
-          <div class="btn-help" (click)="toggleHelp('hard')" [ngClass]="{'active': helphard}">
+          <div class="btn-help" (click)="toggleHelp('hard')" [ngClass]="{'active': helpHard}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="helphard">
+      <div class="helper" *ngIf="helpHard">
         <span>Trouvez la bonne couleur à partir de son code Hexadécimal en haut de l'écran</span>
       </div>
     </ion-slide>
@@ -276,12 +276,12 @@
           <div class="btn-play">
             <ion-icon ios="ios-lock" md="md-lock"></ion-icon>
           </div>
-          <div class="btn-help" (click)="toggleHelp('doom')">
+          <div class="btn-help" (click)="toggleHelp('doom')" [ngClass]="{'active': helpDoom}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="helpdoom">
+      <div class="helper" *ngIf="helpDoom">
         <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
       </div>
     </ion-slide> -->

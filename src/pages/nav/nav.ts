@@ -15,27 +15,27 @@ import { EasyPage } from '../easy/easy';
 export class NavPage {
 
   constructor(public navCtrl: NavController) {}
-  helpeasy: boolean = false;
-  helpnormal: boolean = false;
-  helphard: boolean = false;
-  helpdoom: boolean = false;
+  helpEasy: boolean = false;
+  helpNormal: boolean = false;
+  helpHard: boolean = false;
+  helpDoom: boolean = false;
 
   toggleHelp(difficulty){
     switch(difficulty) {
       case "easy": {
-        this.helpeasy = (this.helpeasy == false) ? true : false;
+        this.helpEasy = (this.helpEasy == false) ? true : false;
         break;
       }
       case "normal": {
-        this.helpnormal = (this.helpnormal == false) ? true : false;
+        this.helpNormal = (this.helpNormal == false) ? true : false;
         break;
       }
       case "hard": {
-        this.helphard = (this.helphard == false) ? true : false;
+        this.helpHard = (this.helpHard == false) ? true : false;
         break;
       }
       case "doom": {
-        this.helpdoom = (this.helpdoom == false) ? true : false;
+        this.helpDoom = (this.helpDoom == false) ? true : false;
         break;
       }
     }
