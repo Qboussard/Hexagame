@@ -23,8 +23,7 @@ page-nav {
       display: flex;
       flex-wrap: wrap;
     }
-    .ico_block{
-      // box-shadow:0 6px 10px 0 rgba(0, 0, 0, 0.3),0 2px 2px 0 rgba(0, 0, 0, 0.2);
+    .ico-block{
       display: inline-block;
       height: 80px;
       line-height: 80px;
@@ -65,9 +64,13 @@ page-nav {
       background: rgba(0, 0, 0, 0.6);
       padding: 5px;
       font-size: 25px;
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
     .slide-zoom{
-      .header_page{
+      .header-page{
         height: calc( 100% - 130px);
         width: 100%;
         display: flex;
@@ -88,7 +91,7 @@ page-nav {
           }
         }
       }
-      .subButton{
+      .sub-button{
         height: 80px;
         margin-bottom: 50px;
         width: 100%;
@@ -96,41 +99,41 @@ page-nav {
         align-items: center;
         justify-content:space-around;
 
-        .ico_block{
+        .ico-block{
           width: 100%;
           display: flex;
           flex-wrap: nowrap;
 
-          .btn_play{
+          .btn-play{
             width: 70%;
             display: flex;
             align-items: center;
             justify-content: center;
           }
-          .btn_help{
+          .btn-help{
             width: 30%;
             border-left: 1px solid rgba(0,0,0,0.1);
             display: flex;
             align-items: center;
             justify-content: center;
           }
-          .btn_play:active, .btn_help:active{
+          .btn-play:active, .btn-help:active, .btn-help.active {
             background-color:rgba(0,0,0,0.1);
           }
         }
       }
     }
   }
-  .nav1 .slide-zoom .subButton .ico_block{
+  .nav1 .slide-zoom .sub-button .ico-block{
     @include button-mode($easy-color-primary, $easy-color-secondary);
   }
-  .nav2 .slide-zoom .subButton .ico_block{
+  .nav2 .slide-zoom .sub-button .ico-block{
     @include button-mode($normal-color-primary, $normal-color-secondary);
   }
-  .nav3 .slide-zoom .subButton .ico_block{
+  .nav3 .slide-zoom .sub-button .ico-block{
     @include button-mode($hard-color-primary, $hard-color-secondary);
   }
-  .nav4 .slide-zoom .subButton .ico_block{
+  .nav4 .slide-zoom .sub-button .ico-block{
     @include button-mode($doom-color-primary, $doom-color-secondary);
   }
 }

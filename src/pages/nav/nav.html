@@ -1,7 +1,7 @@
 <ion-content>
   <ion-slides loop="false" autoplay="false" zoom="false" pager='true'>
     <ion-slide class='nav1 nav'>
-      <div class="header_page">
+      <div class="header-page">
         <h1>Easy mode</h1>
         <div class="img-level">
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -55,22 +55,24 @@
           </svg>
         </div>
       </div>
-      <div class="subButton">
-        <div class="ico_block">
-          <div class="btn_play" (click)="goToEasyPage()">
+      <div class="sub-button">
+        <div class="ico-block">
+          <div class="btn-play" (click)="goToEasyPage()">
             <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
-          <div class="btn_help" (click)="toggleHelp('easy')">
+          <div class="btn-help" (click)="toggleHelp('easy')" [ngClass]="{'active': helpEasy}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="helpeasy">
-        <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
+      <div class="helper" *ngIf="helpEasy">
+        <span>
+          Trouvez la bonne couleur à partir de son nom HTML en haut de l'écran
+        </span>
       </div>
     </ion-slide>
     <ion-slide class='nav2 nav'>
-      <div class="header_page">
+      <div class="header-page">
         <h1>Normal mode</h1>
         <div class="img-level">
           <svg version="1.1" id="Calque_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -121,22 +123,22 @@
           </svg>
         </div>
       </div>
-      <div class="subButton">
-        <div class="ico_block" >
-          <div class="btn_play" (click)="goToNormalPage()">
+      <div class="sub-button">
+        <div class="ico-block" >
+          <div class="btn-play" (click)="goToNormalPage()">
             <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
-          <div class="btn_help" (click)="toggleHelp('normal')">
+          <div class="btn-help" (click)="toggleHelp('normal')" [ngClass]="{'active': helpNormal}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="helpnormal">
-        <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
+      <div class="helper" *ngIf="helpNormal">
+        <span>Trouvez la bonne couleur à partir de son nom HTML en haut de l'écran en moins de 3 secondes !</span>
       </div>
     </ion-slide>
     <ion-slide class='nav3 nav'>
-      <div class="header_page">
+      <div class="header-page">
         <h1>Hard mode</h1>
         <div class="img-level">
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -203,22 +205,22 @@
           </svg>
         </div>
       </div>
-      <div class="subButton">
-        <div class="ico_block">
-          <div class="btn_play" (click)="goToHardPage()">
+      <div class="sub-button">
+        <div class="ico-block">
+          <div class="btn-play" (click)="goToHardPage()">
             <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
-          <div class="btn_help" (click)="toggleHelp('hard')">
+          <div class="btn-help" (click)="toggleHelp('hard')" [ngClass]="{'active': helpHard}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="helphard">
-        <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
+      <div class="helper" *ngIf="helpHard">
+        <span>Trouvez la bonne couleur à partir de son code Hexadécimal en haut de l'écran</span>
       </div>
     </ion-slide>
     <!-- <ion-slide class='nav4 nav'>
-      <div class="header_page">
+      <div class="header-page">
         <h1>Doom mode</h1>
         <div class="img-level">
           <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -269,17 +271,17 @@
           </svg>
         </div>
       </div>
-      <div class="subButton">
-        <div class="ico_block">
-          <div class="btn_play">
+      <div class="sub-button">
+        <div class="ico-block">
+          <div class="btn-play">
             <ion-icon ios="ios-lock" md="md-lock"></ion-icon>
           </div>
-          <div class="btn_help" (click)="toggleHelp('doom')">
+          <div class="btn-help" (click)="toggleHelp('doom')" [ngClass]="{'active': helpDoom}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
           </div>
         </div>
       </div>
-      <div class="helper" *ngIf="helpdoom">
+      <div class="helper" *ngIf="helpDoom">
         <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
       </div>
     </ion-slide> -->
