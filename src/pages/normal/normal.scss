@@ -1,39 +1,3 @@
 page-normal {
 
 }
-
-#countdown {
-  position: relative;
-  margin: auto;
-  height: 30px;
-  width: 30px;
-  text-align: center;
-
-  svg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 30px;
-    height: 30px;
-    transform: rotateY(-180deg) rotateZ(-90deg);
-  }
-
-  svg circle {
-    stroke-dasharray: 113px;
-    stroke-dashoffset: 0px;
-    stroke-linecap: round;
-    stroke-width: 2px;
-    stroke: white;
-    fill: none;
-    animation: countdown 3s linear 1 forwards;
-  }
-
-  @keyframes countdown {
-    from {
-      stroke-dashoffset: 0px;
-    }
-    to {
-      stroke-dashoffset: 113px;
-    }
-  }  
-}
