@@ -1,15 +1,15 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-        <span class='question'>{{goodColor}}</span>
-        <span class='point'>{{point}}</span>
+        <span class='question'>{{goodColor}}</span><span class='point'>{{point}}</span>
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <div *ngFor='let color of colors; trackBy: index;' [ngStyle]="{'background':color}" class="color" (click)="checkResponse(color)" >
-    <img src="assets/img/response.svg" class="check-response" *ngIf='fail && color == goodColor'>
+    <div class="shadow-wrong-response" *ngIf="fail && color != goodColor"></div>
+    <!-- <span class='helpersColor' [hidden]="!fail" >{{color}}</span> -->
   </div>
   <div class="start-block" [hidden]="!fail">
     <div class='score-container' [hidden]="bestPoint">
