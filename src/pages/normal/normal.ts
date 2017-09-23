@@ -27,6 +27,7 @@ export class NormalPage {
   testcolor: boolean;
   record: number;
   timer: any;
+  activeTimer: boolean = false;
 
   i: number = 0;
   k: number = 1;
@@ -47,9 +48,10 @@ export class NormalPage {
     if (this.point >= 15)                     return this.difficulty = 3;
   }
   checkResponse(userChoice){
+    this.activeTimer = false;
     if(userChoice != this.goodColor) return this.wrongResponse();
     this.point++;
-    this.ngOnInit();
+    setTimeout(() => this.ngOnInit(), 10);
   }
   wrongResponse(){
     this.fail = 1;
@@ -76,6 +78,7 @@ export class NormalPage {
     this.point = 0;
     this.fail = 0;
     this.bestPoint = false;
+    this.activeTimer = true;
   }
   shareScore(){
     this.shareService.shareScreenshot();
@@ -85,9 +88,15 @@ export class NormalPage {
     clearTimeout(this.timer);
     this.timer = setTimeout(function(){
       page.wrongResponse();
-    },3000);
+      console.log('plop 3');
+    },3010);
+  }
+  resetAnimTimer(){
+    this.activeTimer = false;
+    setTimeout(() => this.ngOnInit(), 10);
   }
   ngOnInit(){
+    this.activeTimer = true;
     this.resetTimer();
 
     if(this.fail == 1) this.reset();
