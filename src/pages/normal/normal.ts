@@ -88,7 +88,6 @@ export class NormalPage {
     clearTimeout(this.timer);
     this.timer = setTimeout(function(){
       page.wrongResponse();
-      console.log('plop 3');
     },3010);
   }
   resetAnimTimer(){
