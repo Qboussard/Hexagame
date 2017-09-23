@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content>
+  <div class="content-timer">
+    <div class="timer" [ngClass]="{'active': activeTimer}"></div>
+  </div>
   <div *ngFor='let color of colors; trackBy: index;' [ngStyle]="{'background':color}" class="color" (click)="checkResponse(color)" >
     <img src="assets/img/response.svg" class="check-response" *ngIf='fail && color == goodColor'>
   </div>
@@ -30,7 +33,7 @@
       <button ion-button block (click)="goToNavPage()">
         <ion-icon ios="ios-home" md="md-home"></ion-icon>
       </button>
-      <button ion-button block (click)="ngOnInit()">
+      <button ion-button block (click)="resetAnimTimer()">
         <ion-icon ios="ios-refresh" md="md-refresh"></ion-icon>
       </button>
       <button ion-button block (click)='shareScore();'>

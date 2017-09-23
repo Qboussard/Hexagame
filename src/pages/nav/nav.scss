@@ -12,7 +12,7 @@ page-nav {
     background: url("../assets/img/background.jpg");
     background-size: cover;
   }
-  
+
   .slides{
     color:#444444;
 
@@ -123,6 +123,9 @@ page-nav {
         }
       }
     }
+  }
+  .nav2 .slide-zoom .header-page .img-level svg{
+    width: 75%;
   }
   .nav1 .slide-zoom .sub-button .ico-block{
     @include button-mode($easy-color-primary, $easy-color-secondary);
