@@ -66,12 +66,16 @@ export class NavPage {
   }
 
   goToEasyPage() {
-    this.navCtrl.push(EasyPage);
+    this.navCtrl.push(EasyPage, { "parentPage": this });
   }
   goToNormalPage() {
-    this.navCtrl.push(NormalPage);
+    this.navCtrl.push(NormalPage, { "parentPage": this });
   }
   goToHardPage() {
-    this.navCtrl.push(HardPage);
+    this.navCtrl.push(HardPage, { "parentPage": this });
+  }
+
+  ngOnInit(){
+    this.getBestScore();
   }
 }

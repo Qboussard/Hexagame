@@ -99,4 +99,7 @@ export class EasyPage {
   goToNavPage() {
     this.navCtrl.pop()
   }
+  ionViewWillLeave() {
+    this.navParams.get("parentPage").ngOnInit();
+  }
 }
