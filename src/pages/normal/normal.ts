@@ -114,6 +114,7 @@ export class NormalPage {
     this.goodColor = this.colors[Math.floor(Math.random() * this.colors.length)];
   }
   ionViewWillLeave() {
+    this.navParams.get("parentPage").ngOnInit();
     clearTimeout(this.timer);
   }
   goToNavPage() {
