@@ -13,7 +13,7 @@ export class HardPage {
   possible: string = "0123456789ABCDEF";
   point: number = 0;
   bestPoint: boolean;
-  nbColors: number[] = [2, 4, 6];
+  readonly nbColors: number[] = [2, 4, 6];
   difficulty: number = 0;
   hexa: string = "#";
   goodColor: string = "";
@@ -78,7 +78,8 @@ export class HardPage {
     this.setDifficulty();
 
     let color:string = "";
-    for(let k:number = 1 ; k <= this.nbColors[this.difficulty] ; k++){
+    let len: number = this.nbColors[this.difficulty];
+    for(let k:number = 1 ; k <= len ; k++){
       color = this.generateColorCode();
       this.colors.push(color);
     }
