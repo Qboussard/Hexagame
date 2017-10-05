@@ -6,7 +6,7 @@ import { Injectable } from "@angular/core";
 export class ShareService {
   constructor(private socialSharing: SocialSharing, private screenshot: Screenshot) {}
 
-  shareScreenshot() {
+  shareScreenshot(): void {
     this.screenshot.URI(80)
     .then((res) => {
       this.sharePicture(res.URI)
@@ -16,7 +16,7 @@ export class ShareService {
     });
   }
 
-  sharePicture(picture) {
+  sharePicture(picture): void {
     this.socialSharing.share('', '', picture).then(() => {},
     () => {
       alert('SocialSharing failed');

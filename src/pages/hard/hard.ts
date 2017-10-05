@@ -16,45 +16,45 @@ export class HardPage {
   nbColors: number[] = [2, 4, 6];
   difficulty: number = 0;
   hexa: string = "#";
-  goodColor: string ="";
-  color: string;
-  colors: Array<any> = [];
+  goodColor: string = "";
+  colors: Array<string> = [];
   fail: number = 0;
   record: number;
 
-
-  i: number = 0;
-  k: number = 1;
-
-  getRandomInt(min, max) {
+  getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
-  generateColorCode(){
-    this.i = 0;
-    this.hexa = "#";
-    for( this.i=1 ; this.i <= 6 ; this.i++){
-      var randomInt = this.getRandomInt(0, this.possible.length - 1);
-      this.hexa += this.possible[randomInt];
+  generateColorCode(): string {
+    let hexa: string = "#";
+    let len: number = this.possible.length - 1;
+    
+    for(let i: number = 1 ; i <= 6 ; i++){
+      let randomInt: number = this.getRandomInt(0, len);
+      hexa += this.possible[randomInt];
     }
-    return this.hexa;
+    return hexa;
   }
 
-  setDifficulty(){
-    if (this.point == 0 && this.point < 5)  return this.difficulty = 0;
+  setDifficulty(): number {
+    if (this.point === 0 && this.point < 5)  return this.difficulty = 0;
     if (this.point >= 5 && this.point < 10) return this.difficulty = 1;
     if (this.point >= 10)                   return this.difficulty = 2;
   }
-  checkResponse(userChoice){
-    if(userChoice != this.goodColor) return this.wrongResponse();
+  checkResponse(userChoice: string): void{
+    if(userChoice != this.goodColor)
+    {
+      this.wrongResponse();
+      return;
+    }
     this.point++;
     this.ngOnInit();
   }
-  wrongResponse(){
+  wrongResponse(): void {
     this.fail = 1;
     this.defineBestScore();
   }
-  defineBestScore(){
+  defineBestScore(): void {
     this.storage.get('bestScoreHard').then((val) => {
       if (val == null || this.point > val) {
         this.storage.set('bestScoreHard', this.point);
@@ -63,23 +63,24 @@ export class HardPage {
       this.record = val;
     });
   }
-  reset(){
+  reset(): void {
     this.point = 0;
     this.fail = 0;
     this.bestPoint = false;
   }
-  shareScore(){
+  shareScore(): void {
     this.shareService.shareScreenshot();
   }
-  ngOnInit(){
-    if(this.fail == 1) this.reset();
+  ngOnInit(): void {
+    if(this.fail === 1) this.reset();
 
     this.colors = [];
     this.setDifficulty();
 
-    for(this.k=1 ; this.k <= this.nbColors[this.difficulty] ; this.k++){
-      this.color = this.generateColorCode();
-      this.colors.push(this.color);
+    let color:string = "";
+    for(let k:number = 1 ; k <= this.nbColors[this.difficulty] ; k++){
+      color = this.generateColorCode();
+      this.colors.push(color);
     }
     this.goodColor = this.colors[Math.floor(Math.random() * this.colors.length)];
   }
