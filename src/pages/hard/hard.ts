@@ -10,7 +10,7 @@ import { Storage } from '@ionic/storage';
 export class HardPage {
   constructor(public navCtrl: NavController, private shareService: ShareService, private storage: Storage) {}
 
-  possible: string = "0123456789ABCDEF";
+  readonly possible: string = "0123456789ABCDEF";
   point: number = 0;
   bestPoint: boolean;
   readonly nbColors: number[] = [2, 4, 6];
@@ -23,6 +23,14 @@ export class HardPage {
 
   getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  isColorAlreadyChoose(obj: string): boolean {
+    if (this.colors.indexOf(obj) !== -1)
+    {
+      return true;
+    }
+    return false;
   }
 
   generateColorCode(): string {
@@ -80,7 +88,10 @@ export class HardPage {
     let color:string = "";
     let len: number = this.nbColors[this.difficulty];
     for(let k:number = 1 ; k <= len ; k++){
-      color = this.generateColorCode();
+      do
+      {
+        color = this.generateColorCode();        
+      } while(this.isColorAlreadyChoose(color) === true)
       this.colors.push(color);
     }
     this.goodColor = this.colors[Math.floor(Math.random() * this.colors.length)];
