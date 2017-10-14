@@ -27,35 +27,35 @@ export class NavPage {
   recordNormal: number;
   recordHard: number;
 
-  toggleHelp(difficulty){
+  toggleHelp(difficulty: string){
     switch(difficulty) {
       case "easy": {
-        this.helpEasy = (this.helpEasy == false) ? true : false;
+        this.helpEasy = !this.helpEasy;
         break;
       }
       case "normal": {
-        this.helpNormal = (this.helpNormal == false) ? true : false;
+        this.helpNormal = !this.helpNormal;
         break;
       }
       case "hard": {
-        this.helpHard = (this.helpHard == false) ? true : false;
+        this.helpHard = !this.helpHard;
         break;
       }
       case "doom": {
-        this.helpDoom = (this.helpDoom == false) ? true : false;
+        this.helpDoom = !this.helpDoom;
         break;
       }
     }
   }
 
-  getBestScore() {
-    this.storage.get('bestScoreEasy').then((val) => {
+  getBestScore(): void {
+    this.storage.get('bestScoreEasy').then((val: number) => {
       this.recordEasy = val;
     });
-    this.storage.get('bestScoreNormal').then((val) => {
+    this.storage.get('bestScoreNormal').then((val: number) => {
       this.recordNormal = val;
     });
-    this.storage.get('bestScoreHard').then((val) => {
+    this.storage.get('bestScoreHard').then((val: number) => {
       this.recordHard = val;
     });
   }
@@ -65,17 +65,17 @@ export class NavPage {
     this.slides.slideTo(2, 500);
   }
 
-  goToEasyPage() {
+  goToEasyPage(): void {
     this.navCtrl.push(EasyPage, { "parentPage": this });
   }
-  goToNormalPage() {
+  goToNormalPage(): void {
     this.navCtrl.push(NormalPage, { "parentPage": this });
   }
-  goToHardPage() {
+  goToHardPage(): void {
     this.navCtrl.push(HardPage, { "parentPage": this });
   }
 
-  ngOnInit(){
+  ngOnInit(): void {
     this.getBestScore();
   }
 }
