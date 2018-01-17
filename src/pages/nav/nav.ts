@@ -4,6 +4,7 @@ import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
+import { InitiatedPage } from '../initiated/initiated';
 import { HardPage } from '../hard/hard';
 import { NormalPage } from '../normal/normal';
 import { EasyPage } from '../easy/easy';
@@ -22,10 +23,12 @@ export class NavPage {
   helpNormal: boolean = false;
   helpHard: boolean = false;
   helpDoom: boolean = false;
+  helpInitiated: boolean = false;
 
   recordEasy: number;
   recordNormal: number;
   recordHard: number;
+  recordinitiated: number;
 
   toggleHelp(difficulty: string){
     switch(difficulty) {
@@ -58,6 +61,9 @@ export class NavPage {
     this.storage.get('bestScoreHard').then((val: number) => {
       this.recordHard = val;
     });
+    this.storage.get('bestScoreInitiated').then((val: number) => {
+      this.recordHard = val;
+    });
   }
 
   @ViewChild(Slides) slides: Slides;
@@ -73,6 +79,9 @@ export class NavPage {
   }
   goToHardPage(): void {
     this.navCtrl.push(HardPage, { "parentPage": this });
+  }
+  goToInitiatedPage(): void {
+    this.navCtrl.push(InitiatedPage, { "parentPage": this });
   }
 
   ngOnInit(): void {

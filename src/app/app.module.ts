@@ -10,6 +10,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { ShareService } from '../providers/share-service';
 import { HardPage } from '../pages/hard/hard';
+import { InitiatedPage } from '../pages/initiated/initiated';
 import { NormalPage } from '../pages/normal/normal';
 import { EasyPage } from '../pages/easy/easy';
 import { NavPage } from '../pages/nav/nav';
@@ -20,6 +21,7 @@ import { TrophyComponent } from '../components/trophy/trophy';
   declarations: [
     MyApp,
     HardPage,
+    InitiatedPage,
     NormalPage,
     EasyPage,
     NavPage,
@@ -34,6 +36,7 @@ import { TrophyComponent } from '../components/trophy/trophy';
   entryComponents: [
     MyApp,
     HardPage,
+    InitiatedPage,
     NormalPage,
     EasyPage,
     NavPage
