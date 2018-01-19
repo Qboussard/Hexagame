@@ -25,6 +25,21 @@ page-easy, page-normal, page-hard, page-initiated{
     display: flex;
     flex-wrap:wrap;
 
+    .color:nth-child(odd) .check-response{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      bottom: 5px;
+      left: 5px;
+    }
+    .color:nth-child(even) .check-response{
+      width: 50px;
+      height: 50px;
+      position: absolute;
+      bottom: 5px;
+      right: 5px;
+    }
+
     .color{
       width:50%;
       position: relative;
@@ -33,13 +48,6 @@ page-easy, page-normal, page-hard, page-initiated{
       align-items:flex-end;
       padding: 5px;
 
-      .check-response{
-        width: 50px;
-        height: 50px;
-        position: absolute;
-        bottom: 5px;
-        right: 5px;
-      }
 
       .helpersColor{
         background: $primary-color;
