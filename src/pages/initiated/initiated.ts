@@ -13,7 +13,7 @@ export class InitiatedPage {
   }
 
   readonly possible: Array<string> = [
-  "red","yellow","green","blue","brown","grey"
+  "red","yellow","green","blue","brown","grey","purple"
   ];
   readonly red: Array<string> = [
   "LightSalmon","DarkSalmon","LightCoral","IndianRed","Crimson","Red","FireBrick","DarkRed"
@@ -70,6 +70,9 @@ export class InitiatedPage {
       }
       case "grey": {
         return this.grey[this.getRandomInt(0, this.grey.length - 1)];
+      }
+      case "purple": {
+        return this.purple[this.getRandomInt(0, this.purple.length - 1)];
       }
     }
   }
