@@ -8,7 +8,6 @@ import { EasyPage } from '../easy/easy';
 import { NormalPage } from '../normal/normal';
 import { HardPage } from '../hard/hard';
 import { DoomPage } from '../doom/doom';
-import { InitiatedPage } from '../initiated/initiated';
 
 @Component({
   selector: 'page-nav',
@@ -23,13 +22,11 @@ export class NavPage {
   helpNormal: boolean = false;
   helpHard: boolean = false;
   helpDoom: boolean = false;
-  helpInitiated: boolean = false;
 
   recordEasy: number;
   recordNormal: number;
   recordHard: number;
   recordDoom: number;
-  recordinitiated: number;
 
   toggleHelp(difficulty: string){
     switch(difficulty) {
@@ -65,9 +62,6 @@ export class NavPage {
     this.storage.get('bestScoreDoom').then((val: number) => {
       this.recordDoom = val;
     });
-    this.storage.get('bestScoreInitiated').then((val: number) => {
-      this.recordHard = val;
-    });
   }
 
   @ViewChild(Slides) slides: Slides;
@@ -86,9 +80,6 @@ export class NavPage {
   }
   goToDoomPage(): void {
     this.navCtrl.push(DoomPage, { "parentPage": this });
-  }
-  goToInitiatedPage(): void {
-    this.navCtrl.push(InitiatedPage, { "parentPage": this });
   }
 
   ngOnInit(): void {

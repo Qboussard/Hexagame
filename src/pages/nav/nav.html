@@ -72,29 +72,6 @@
     </ion-slide>
 
     <ion-slide class='nav4 nav'>
-      <div class='page-lock' *ngIf="recordNormal < 15">Nécéssite un score de 15 en mode Normal</div>
-      <div class="header-page">
-        <h1>Initiated mode</h1>
-        <div class="img-level">
-          <img src="assets/img/initiated.svg">
-        </div>
-      </div>
-      <div class="sub-button">
-        <div class="ico-block">
-          <div class="btn-play" (click)="goToInitiatedPage()">
-            <ion-icon ios="md-play" md="md-play" *ngIf="recordNormal > 14"></ion-icon>
-            <ion-icon ios="ios-lock" md="md-lock" *ngIf="recordNormal < 15"></ion-icon>
-          </div>
-          <div class="btn-help" (click)="toggleHelp('initiated')" [ngClass]="{'active': helpHard}">
-            <ion-icon ios="md-help" md="md-help"></ion-icon>
-          </div>
-        </div>
-      </div>
-      <div class="helper" *ngIf="helpHard">
-        <span>Trouvez la bonne couleur</span>
-      </div>
-    </ion-slide>
-    <ion-slide class='nav5 nav'>
       <div class="header-page">
         <h1>Doom mode</h1>
         <div class="img-level">
