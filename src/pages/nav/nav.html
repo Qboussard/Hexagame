@@ -94,7 +94,7 @@
         <span>Trouvez la bonne couleur</span>
       </div>
     </ion-slide>
-    <!-- <ion-slide class='nav5 nav'>
+    <ion-slide class='nav5 nav'>
       <div class="header-page">
         <h1>Doom mode</h1>
         <div class="img-level">
@@ -103,8 +103,8 @@
       </div>
       <div class="sub-button">
         <div class="ico-block">
-          <div class="btn-play">
-            <ion-icon ios="ios-lock" md="md-lock"></ion-icon>
+          <div class="btn-play" (click)="goToDoomPage()">
+            <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
           <div class="btn-help" (click)="toggleHelp('doom')" [ngClass]="{'active': helpDoom}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
@@ -112,8 +112,8 @@
         </div>
       </div>
       <div class="helper" *ngIf="helpDoom">
-        <span>ceci est un message d'aide pour expliquer le principe du jeux</span>
+        <span>Trouvez la bonne couleur à partir de son code Hexadécimal en haut de l'écran</span>
       </div>
-    </ion-slide> -->
+    </ion-slide>
   </ion-slides>
 </ion-content>
