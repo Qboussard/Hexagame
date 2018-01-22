@@ -71,7 +71,7 @@
       </div>
     </ion-slide>
 
-    <ion-slide class='nav4 nav'>
+    <ion-slide class='nav4 nav' *ngIf="recordHard > 15">
       <div class='page-lock' *ngIf="recordHard < 15">Nécéssite un score de 15 en mode Hard</div>
       <div class="header-page">
         <h1>Doom mode</h1>
