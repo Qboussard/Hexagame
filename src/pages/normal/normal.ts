@@ -45,6 +45,7 @@ export class NormalPage {
   }
   checkResponse(userChoice: string): void {
     this.activeTimer = false;
+    if (this.fail == 1) return;
     if(userChoice != this.goodColor)
     {
       this.wrongResponse();
