@@ -72,7 +72,6 @@
     </ion-slide>
 
     <ion-slide class='nav4 nav' *ngIf="recordHard > 15">
-      <div class='page-lock' *ngIf="recordHard < 15">Nécéssite un score de 15 en mode Hard</div>
       <div class="header-page">
         <h1>Doom mode</h1>
         <div class="img-level">
@@ -82,8 +81,7 @@
       <div class="sub-button">
         <div class="ico-block">
           <div class="btn-play" (click)="goToDoomPage()">
-            <ion-icon ios="md-play" md="md-play" *ngIf="recordHard > 14"></ion-icon>
-            <ion-icon ios="ios-lock" md="md-lock" *ngIf="recordHard < 15"></ion-icon>
+            <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
           <div class="btn-help" (click)="toggleHelp('doom')" [ngClass]="{'active': helpDoom}">
             <ion-icon ios="md-help" md="md-help"></ion-icon>
