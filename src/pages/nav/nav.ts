@@ -4,10 +4,10 @@ import { ViewChild } from '@angular/core';
 import { Slides } from 'ionic-angular';
 import { Storage } from '@ionic/storage';
 
-import { HardPage } from '../hard/hard';
-import { NormalPage } from '../normal/normal';
 import { EasyPage } from '../easy/easy';
-
+import { NormalPage } from '../normal/normal';
+import { HardPage } from '../hard/hard';
+import { DoomPage } from '../doom/doom';
 
 @Component({
   selector: 'page-nav',
@@ -26,6 +26,7 @@ export class NavPage {
   recordEasy: number;
   recordNormal: number;
   recordHard: number;
+  recordDoom: number;
 
   toggleHelp(difficulty: string){
     switch(difficulty) {
@@ -58,6 +59,9 @@ export class NavPage {
     this.storage.get('bestScoreHard').then((val: number) => {
       this.recordHard = val;
     });
+    this.storage.get('bestScoreDoom').then((val: number) => {
+      this.recordDoom = val;
+    });
   }
 
   @ViewChild(Slides) slides: Slides;
@@ -73,6 +77,9 @@ export class NavPage {
   }
   goToHardPage(): void {
     this.navCtrl.push(HardPage, { "parentPage": this });
+  }
+  goToDoomPage(): void {
+    this.navCtrl.push(DoomPage, { "parentPage": this });
   }
 
   ngOnInit(): void {

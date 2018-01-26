@@ -10,6 +10,7 @@ import { IonicStorageModule } from '@ionic/storage';
 import { MyApp } from './app.component';
 import { ShareService } from '../providers/share-service';
 import { HardPage } from '../pages/hard/hard';
+import { DoomPage } from '../pages/doom/doom';
 import { NormalPage } from '../pages/normal/normal';
 import { EasyPage } from '../pages/easy/easy';
 import { NavPage } from '../pages/nav/nav';
@@ -19,9 +20,10 @@ import { TrophyComponent } from '../components/trophy/trophy';
 @NgModule({
   declarations: [
     MyApp,
-    HardPage,
-    NormalPage,
     EasyPage,
+    NormalPage,
+    HardPage,
+    DoomPage,
     NavPage,
     TrophyComponent
   ],
@@ -33,9 +35,10 @@ import { TrophyComponent } from '../components/trophy/trophy';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HardPage,
-    NormalPage,
     EasyPage,
+    NormalPage,
+    HardPage,
+    DoomPage,
     NavPage
   ],
   providers: [
