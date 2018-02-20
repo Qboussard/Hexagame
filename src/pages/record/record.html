@@ -1,0 +1,32 @@
+<ion-content>
+    <div class="record-box">
+      <div class="icon">
+          <!-- a changer pour un svg -->
+          <img src="assets/img/cup.png">
+      </div>
+      <div class="record-number">{{recordEasy}}</div>
+    </div>
+    <div class="record-box">
+      <div class="icon">
+          <img src="assets/img/cup.png" *ngIf="recordEasy >= 15">
+          <img src="assets/img/lock.png" *ngIf="recordEasy < 15">
+      </div>
+      <div class="record-number" *ngIf="recordEasy >= 15">{{recordNormal}}</div>
+      <div class="record-number" *ngIf="!recordEasy && recordEasy >= 15">0</div>
+    </div>
+    <div class="record-box">
+      <div class="icon">
+          <img src="assets/img/cup.png"  *ngIf="recordNormal >= 15">
+          <img src="assets/img/lock.png" *ngIf="recordNormal < 15">
+      </div>
+      <div class="record-number" *ngIf="recordNormal >= 15">{{recordHard}}</div>
+      <div class="record-number" *ngIf="!recordNormal && recordNormal >= 15">0</div>
+    </div>
+    <div class="record-box" *ngIf="recordHard >= 15">
+      <div class="icon">
+          <img src="assets/img/cup.png">
+      </div>
+      <div class="record-number" *ngIf="recordHard >= 15">{{recordDoom}}</div>
+      <div class="record-number" *ngIf="!recordHard && recordHard >= 15">0</div>
+    </div>
+</ion-content>

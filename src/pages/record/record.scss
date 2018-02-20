@@ -1,0 +1,57 @@
+page-record {
+
+  ion-content {
+    background-color: $primary-color;
+    background: url("../assets/img/background.jpg");
+    background-size: cover;
+  }
+  .scroll-content{
+    display: flex;
+    align-items: center;
+    flex-wrap:wrap;
+    align-content: flex-start;
+    padding-top: 100px !important;
+
+    .record-box{
+      width: 100%;
+      align-content:space-around;
+      display: inline-block;
+      height: 80px;
+      line-height: 80px;
+      display: flex;
+      flex-wrap:nowrap;
+      margin: 20px 0;
+
+      .icon {
+        width: 30%;
+        border-right: 1px solid rgba(0,0,0,0.1);
+        display: inline-block;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .record-number {
+        text-align: right;
+        width: 70%;
+        display: inline-block;
+        padding:0px 20px;
+        color: $secondary-color;
+        font-size: 30px;
+        font-weight: bold;
+      }
+    }
+    .record-box:nth-child(1){
+      @include button-mode($easy-color-primary, $easy-color-secondary);
+    }
+    .record-box:nth-child(2){
+      @include button-mode($normal-color-primary, $normal-color-secondary);
+    }
+    .record-box:nth-child(3){
+      @include button-mode($hard-color-primary, $hard-color-secondary);
+    }
+    .record-box:nth-child(4){
+      @include button-mode($doom-color-primary, $doom-color-secondary);
+    }
+  }
+}
