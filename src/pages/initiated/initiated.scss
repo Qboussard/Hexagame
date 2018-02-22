@@ -9,9 +9,9 @@ page-initiated {
     align-items: center !important;
   }
   .colorsName {
-    color: #fff;
+    color: $secondary-color;
     font-size:20px;
-    background-color: #242424;
+    background-color: $primary-color;
     padding: 8px;
     border-radius: 5px;
   }

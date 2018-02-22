@@ -138,6 +138,9 @@ page-nav {
   .nav2 .slide-zoom .header-page .img-level img{
     width: 75%;
   }
+  .nav5 .slide-zoom .header-page .img-level img{
+    width: 80%;
+  }
   .nav1 .slide-zoom .sub-button .ico-block{
     @include button-mode($easy-color-primary, $easy-color-secondary);
   }
