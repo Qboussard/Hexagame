@@ -10,17 +10,18 @@ page-record {
     align-items: center;
     flex-wrap:wrap;
     align-content: flex-start;
-    padding-top: 100px !important;
+    padding-top: 70px !important;
+    justify-content:center;
 
     .record-box{
       width: 100%;
       align-content:space-around;
       display: inline-block;
-      height: 80px;
-      line-height: 80px;
+      height: 60px;
+      line-height: 60px;
       display: flex;
       flex-wrap:nowrap;
-      margin: 20px 0;
+      margin: 15px 0;
 
       .icon {
         width: 30%;
@@ -54,4 +55,10 @@ page-record {
       @include button-mode($doom-color-primary, $doom-color-secondary);
     }
   }
+
+	.button-block {
+		width:45%;
+		margin-top:50px;
+		@include button-mode($normal-color-primary, $normal-color-secondary);
+	}
 }

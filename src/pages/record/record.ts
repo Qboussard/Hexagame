@@ -35,4 +35,8 @@ export class RecordPage {
   ngOnInit(): void {
     this.getBestScore();
   }
+
+  goToNavPage(): void {
+    this.navCtrl.pop()
+  }
 }

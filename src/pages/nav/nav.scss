@@ -11,8 +11,16 @@ page-nav {
     background-color: $primary-color;
     background: url("../assets/img/background.jpg");
     background-size: cover;
+    position:relative;
+    z-index:1;
   }
-
+	.record {
+		top:50px;
+		right:20px;
+		color:#fff;
+		position:absolute;
+		z-index:100;
+	}
   .slides{
     color:#444444;
 

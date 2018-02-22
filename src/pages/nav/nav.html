@@ -1,5 +1,6 @@
 <ion-content>
-  <ion-slides loop="false" autoplay="false" zoom="false" pager='true'>
+<img class="record" src="assets/img/cup.png" (click)="goToRecordPage()">
+<ion-slides loop="false" autoplay="false" zoom="false" pager='true'>
     <ion-slide class='nav1 nav'>
       <div class="header-page">
         <h1>Easy mode</h1>
@@ -9,7 +10,7 @@
       </div>
       <div class="sub-button">
         <div class="ico-block">
-          <div class="btn-play" (click)="goToRecordPage()">
+          <div class="btn-play" (click)="goToEasyPage()">
             <ion-icon ios="md-play" md="md-play"></ion-icon>
           </div>
           <div class="btn-help" (click)="toggleHelp('easy')" [ngClass]="{'active': helpEasy}">
