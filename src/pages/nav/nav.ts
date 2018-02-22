@@ -24,6 +24,7 @@ export class NavPage {
   helpNormal: boolean = false;
   helpHard: boolean = false;
   helpDoom: boolean = false;
+  helpInitiated: boolean = false;
 
   recordEasy: number;
   recordNormal: number;
@@ -46,6 +47,10 @@ export class NavPage {
       }
       case "doom": {
         this.helpDoom = !this.helpDoom;
+        break;
+      }
+      case "initiated": {
+        this.helpInitiated = !this.helpInitiated;
         break;
       }
     }
