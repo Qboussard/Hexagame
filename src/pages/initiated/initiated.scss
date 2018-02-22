@@ -1,0 +1,21 @@
+page-initiated {
+  @include border-difficulty($initiated-color-primary);
+  @include toolbar-border($initiated-color-secondary);
+
+  .color {
+    display: flex;
+    justify-content:center !important;
+    align-content:center !important;
+    align-items: center !important;
+  }
+  .colorsName {
+    color: #fff;
+    font-size:20px;
+    background-color: #242424;
+    padding: 8px;
+    border-radius: 5px;
+  }
+  .colorsNameFailure {
+    opacity: 0.2;
+  }
+}

@@ -30,6 +30,15 @@
       <div class="record-number" *ngIf="!recordHard && recordHard >= 15">0</div>
     </div>
 
+    <div class="record-box">
+      <div class="icon">
+          <img src="assets/img/cup.png">
+          <!-- <img src="assets/img/lock.png"> -->
+      </div>
+      <div class="record-number" *ngIf="recordNormal >= 15">{{recordInitiated}}</div>
+      <!-- <div class="record-number" *ngIf="!recordNormal && recordNormal >= 15">0</div> -->
+    </div>
+
       <button ion-button block (click)="goToNavPage()">
         <ion-icon ios="ios-home" md="md-home"></ion-icon>
       </button>

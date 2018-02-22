@@ -15,6 +15,7 @@ import { NormalPage } from '../pages/normal/normal';
 import { EasyPage } from '../pages/easy/easy';
 import { NavPage } from '../pages/nav/nav';
 import { RecordPage } from '../pages/record/record';
+import { InitiatedPage } from '../pages/initiated/initiated';
 
 import { TrophyComponent } from '../components/trophy/trophy';
 
@@ -27,6 +28,7 @@ import { TrophyComponent } from '../components/trophy/trophy';
     DoomPage,
     NavPage,
     RecordPage,
+    InitiatedPage,
     TrophyComponent
   ],
   imports: [
@@ -42,7 +44,8 @@ import { TrophyComponent } from '../components/trophy/trophy';
     HardPage,
     DoomPage,
     NavPage,
-    RecordPage
+    RecordPage,
+    InitiatedPage
   ],
   providers: [
     StatusBar,

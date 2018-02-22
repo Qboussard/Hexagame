@@ -9,6 +9,7 @@ import { NormalPage } from '../normal/normal';
 import { HardPage } from '../hard/hard';
 import { DoomPage } from '../doom/doom';
 import { RecordPage } from '../record/record';
+import { InitiatedPage } from '../initiated/initiated';
 
 @Component({
   selector: 'page-nav',
@@ -81,6 +82,9 @@ export class NavPage {
   }
   goToDoomPage(): void {
     this.navCtrl.push(DoomPage, { "parentPage": this });
+  }
+  goToInitiatedPage(): void {
+    this.navCtrl.push(InitiatedPage, { "parentPage": this });
   }
   goToRecordPage(): void {
     this.navCtrl.push(RecordPage, { "parentPage": this });

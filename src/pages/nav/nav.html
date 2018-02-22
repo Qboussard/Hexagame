@@ -93,5 +93,26 @@
         <span>Trouvez la bonne couleur à partir de son code Hexadécimal en haut de l'écran</span>
       </div>
     </ion-slide>
+
+    <ion-slide class='nav5 nav'>
+      <div class="header-page">
+        <h1>Initiated mode</h1>
+        <div class="img-level">
+        </div>
+      </div>
+      <div class="sub-button">
+        <div class="ico-block">
+          <div class="btn-play" (click)="goToInitiatedPage()">
+            <ion-icon ios="md-play" md="md-play"></ion-icon>
+          </div>
+          <div class="btn-help" (click)="toggleHelp('doom')" [ngClass]="{'active': helpDoom}">
+            <ion-icon ios="md-help" md="md-help"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="helper" *ngIf="helpDoom">
+        <span>Trouvez la bonne couleur à partir de son code Hexadécimal en haut de l'écran</span>
+      </div>
+    </ion-slide>
   </ion-slides>
 </ion-content>

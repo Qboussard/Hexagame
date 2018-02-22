@@ -48,6 +48,9 @@ page-nav {
     .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(4){
       background-color: $doom-color-secondary;
     }
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(5){
+      background-color: $initiated-color-secondary;
+    }
     .swiper-pagination-bullet{
       opacity: 0.5;
       transition: 0.5s;
@@ -146,5 +149,8 @@ page-nav {
   }
   .nav4 .slide-zoom .sub-button .ico-block{
     @include button-mode($doom-color-primary, $doom-color-secondary);
+  }
+  .nav5 .slide-zoom .sub-button .ico-block{
+    @include button-mode($initiated-color-primary, $initiated-color-secondary);
   }
 }
