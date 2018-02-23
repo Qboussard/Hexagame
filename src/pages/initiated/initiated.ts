@@ -40,7 +40,7 @@ export class InitiatedPage {
   colorType: string = "";
   point: number = 0;
   bestPoint: boolean;
-  readonly nbColors: number[] = [2, 4, 6];
+  readonly nbColors: number[] = [2, 4, 6, 8, 10];
   difficulty: number = 0;
   goodColor: string = "";
   colors: Array<string> = [];
@@ -96,8 +96,8 @@ export class InitiatedPage {
     this.fail = 1;
     this.defineBestScore();
   }
-  isColorAlreadyChoose(obj: string): boolean {
-    if (this.colors.indexOf(obj) !== -1)
+  isColorAlreadyChoose(obj: string, colorname: string): boolean {
+    if (colorname == obj)
     {
       return true;
     }
@@ -129,29 +129,23 @@ export class InitiatedPage {
 
     let nb_color: number = this.nbColors[this.difficulty];
     let color: string = "";
+    let colorname: string = "";
 
     this.colorType = this.possible[this.getRandomInt(0, this.possible.length - 1)];
     for(let k:number = 1 ; k <= nb_color; k++){
       do
       {
         color = this.generateColorCode(this.colorType);
-      } while(this.isColorAlreadyChoose(color) === true)
+        colorname = this.generateColorCode(this.colorType);
+      } while(this.isColorAlreadyChoose(color, colorname) === true)
       this.colors.push(color);
+      this.colorsName.push(colorname);
     }
 
-    for(let k:number = 1 ; k <= nb_color; k++){
-      do
-      {
-        color = this.generateColorCode(this.colorType);
-      } while(this.isColorAlreadyChoose(color) === true)
-      this.colorsName.push(color);
-
-    }
     this.random = Math.floor(Math.random() * this.colors.length)
     this.goodColor = this.colors[this.random];
     this.colorsName[this.random] = this.goodColor;
 
-    console.log(this.goodColor);
   }
   goToNavPage(): void {
     this.navCtrl.pop()
