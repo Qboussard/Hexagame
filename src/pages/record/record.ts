@@ -16,7 +16,9 @@ export class RecordPage {
   recordNormal: number;
   recordHard: number;
   recordDoom: number;
-  
+  recordInitiated: number;
+  sharing_score: number;
+
   getBestScore(): void {
     this.storage.get('bestScoreEasy').then((val: number) => {
       this.recordEasy = val;
@@ -29,6 +31,12 @@ export class RecordPage {
     });
     this.storage.get('bestScoreDoom').then((val: number) => {
       this.recordDoom = val;
+    });
+    this.storage.get('bestScoreInitiated').then((val: number) => {
+      this.recordInitiated = val;
+    });
+    this.storage.get('sharing_score').then((val: number) => {
+      this.sharing_score = val;
     });
   }
 

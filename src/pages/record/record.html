@@ -22,6 +22,16 @@
       <div class="record-number" *ngIf="recordNormal >= 15">{{recordHard}}</div>
       <div class="record-number" *ngIf="!recordNormal && recordNormal >= 15">0</div>
     </div>
+
+    <div class="record-box">
+      <div class="icon">
+          <img class="reward" src="assets/img/reward.svg"  *ngIf="sharing_score">
+          <img class='lock' src="assets/img/lock.svg" *ngIf="!sharing_score">
+      </div>
+      <div class="record-number" *ngIf="recordInitiated">{{recordInitiated}}</div>
+      <div class="record-number" *ngIf="!recordInitiated && sharing_score">0</div>
+    </div>
+
     <div class="record-box" *ngIf="recordHard >= 15">
       <div class="icon">
           <img class="reward" src="assets/img/reward.svg">

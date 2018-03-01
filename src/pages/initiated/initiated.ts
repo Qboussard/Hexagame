@@ -104,9 +104,9 @@ export class InitiatedPage {
     return false;
   }
   defineBestScore(): void {
-    this.storage.get('bestScoreHard').then((val) => {
+    this.storage.get('bestScoreInitiated').then((val) => {
       if (val == null || this.point > val) {
-        this.storage.set('bestScoreHard', this.point);
+        this.storage.set('bestScoreInitiated', this.point);
         this.bestPoint = true;
       }
       this.record = val;
