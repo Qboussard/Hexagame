@@ -117,6 +117,7 @@ export class HardPage {
   }
   shareScore(): void {
     this.shareService.shareScreenshot();
+    this.storage.set('sharing_score', 1);
   }
   ngOnInit(): void {
     if(this.fail === 1) this.reset();

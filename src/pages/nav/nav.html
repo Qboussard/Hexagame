@@ -73,6 +73,7 @@
     </ion-slide>
 
     <ion-slide class='nav4 nav'>
+      <div class='page-lock' *ngIf="!sharingScore && sharingScore != 1">Nécessite d'avoir partagé un score</div>
       <div class="header-page">
         <h1>Initiated mode</h1>
         <div class="img-level">
@@ -90,7 +91,7 @@
         </div>
       </div>
       <div class="helper" *ngIf="helpInitiated">
-        <span>Trouvez la bonne combinaison nom / couleur.</span>
+        <span>Trouvez la bonne combinaison nom / couleur parmis les choix proposé.</span>
       </div>
     </ion-slide>
 

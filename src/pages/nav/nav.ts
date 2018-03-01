@@ -30,6 +30,7 @@ export class NavPage {
   recordNormal: number;
   recordHard: number;
   recordDoom: number;
+  sharingScore: number;
 
   toggleHelp(difficulty: string){
     switch(difficulty) {
@@ -68,6 +69,9 @@ export class NavPage {
     });
     this.storage.get('bestScoreDoom').then((val: number) => {
       this.recordDoom = val;
+    });
+    this.storage.get('sharing_score').then((val: number) => {
+      this.sharingScore = val;
     });
   }
 
