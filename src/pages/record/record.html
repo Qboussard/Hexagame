@@ -3,7 +3,7 @@
       <div class="icon">
           <img class="reward" src="assets/img/reward.svg">
       </div>
-      <div class="record-number">{{recordEasy}}</div>
+      <div class="record-number" *ngIf="recordEasy">{{recordEasy}}</div>
       <div class="record-number" *ngIf="!recordEasy">0</div>
     </div>
     <div class="record-box">
