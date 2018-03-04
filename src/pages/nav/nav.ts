@@ -8,6 +8,7 @@ import { EasyPage } from '../easy/easy';
 import { NormalPage } from '../normal/normal';
 import { HardPage } from '../hard/hard';
 import { DoomPage } from '../doom/doom';
+import { RecordPage } from '../record/record';
 
 @Component({
   selector: 'page-nav',
@@ -80,6 +81,9 @@ export class NavPage {
   }
   goToDoomPage(): void {
     this.navCtrl.push(DoomPage, { "parentPage": this });
+  }
+  goToRecordPage(): void {
+    this.navCtrl.push(RecordPage, { "parentPage": this });
   }
 
   ngOnInit(): void {
