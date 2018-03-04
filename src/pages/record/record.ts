@@ -34,6 +34,7 @@ export class RecordPage {
     });
     this.storage.get('bestScoreInitiated').then((val: number) => {
       this.recordInitiated = val;
+      console.log(this.recordInitiated);
     });
     this.storage.get('sharing_score').then((val: number) => {
       this.sharing_score = val;
