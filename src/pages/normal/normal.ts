@@ -82,6 +82,7 @@ export class NormalPage {
   }
   shareScore(): void {
     this.shareService.shareScreenshot();
+    this.storage.set('sharing_score', 1); 
   }
   resetTimer(): void {
     var page = this;

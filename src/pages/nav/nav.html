@@ -68,11 +68,34 @@
         </div>
       </div>
       <div class="helper" *ngIf="helpHard">
-        <span>Trouvez la bonne couleur à partir de son nom en haut de l'écran en moins de 3 secondes !</span>
+        <span>Trouvez la bonne couleur à partir de son nom en haut de l'écran !</span>
       </div>
     </ion-slide>
 
-    <ion-slide class='nav4 nav' *ngIf="recordHard >= 15">
+    <ion-slide class='nav4 nav'>
+      <div class='page-lock' *ngIf="!sharingScore && sharingScore != 1">Nécessite d'avoir partagé un score</div>
+      <div class="header-page">
+        <h1>Initiated mode</h1>
+        <div class="img-level">
+          <img src="assets/img/initiated.svg">
+        </div>
+      </div>
+      <div class="sub-button">
+        <div class="ico-block">
+          <div class="btn-play" (click)="goToInitiatedPage()">
+            <ion-icon ios="md-play" md="md-play"></ion-icon>
+          </div>
+          <div class="btn-help" (click)="toggleHelp('initiated')" [ngClass]="{'active': initiated}">
+            <ion-icon ios="md-help" md="md-help"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="helper" *ngIf="helpInitiated">
+        <span>Trouvez la bonne combinaison nom / couleur parmis les choix proposé.</span>
+      </div>
+    </ion-slide>
+
+    <ion-slide class='nav5 nav' *ngIf="recordHard >= 15">
       <div class="header-page">
         <h1>Doom mode</h1>
         <div class="img-level">

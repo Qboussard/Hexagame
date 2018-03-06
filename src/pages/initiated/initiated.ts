@@ -5,10 +5,10 @@ import { Storage } from '@ionic/storage';
 
 
 @Component({
-  selector: 'page-hard',
-  templateUrl: 'hard.html'
+  selector: 'page-initiated',
+  templateUrl: 'initiated.html'
 })
-export class HardPage {
+export class InitiatedPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private shareService: ShareService, private storage: Storage) {
   }
 
@@ -40,12 +40,14 @@ export class HardPage {
   colorType: string = "";
   point: number = 0;
   bestPoint: boolean;
-  readonly nbColors: number[] = [2, 4, 6];
+  readonly nbColors: number[] = [2, 4, 6, 8, 10];
   difficulty: number = 0;
   goodColor: string = "";
   colors: Array<string> = [];
+  colorsName: Array<string> = [];
   fail: number = 0;
   record: number;
+  random:number;
 
   getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -94,17 +96,17 @@ export class HardPage {
     this.fail = 1;
     this.defineBestScore();
   }
-  isColorAlreadyChoose(obj: string): boolean {
-    if (this.colors.indexOf(obj) !== -1)
+  isColorAlreadyChoose(obj: string, colorname: string): boolean {
+    if (colorname == obj)
     {
       return true;
     }
     return false;
   }
   defineBestScore(): void {
-    this.storage.get('bestScoreHard').then((val) => {
+    this.storage.get('bestScoreInitiated').then((val) => {
       if (val == null || this.point > val) {
-        this.storage.set('bestScoreHard', this.point);
+        this.storage.set('bestScoreInitiated', this.point);
         this.bestPoint = true;
       }
       this.record = val;
@@ -117,26 +119,33 @@ export class HardPage {
   }
   shareScore(): void {
     this.shareService.shareScreenshot();
-    this.storage.set('sharing_score', 1);
   }
   ngOnInit(): void {
     if(this.fail === 1) this.reset();
 
     this.colors = [];
+    this.colorsName = [];
     this.setDifficulty();
 
     let nb_color: number = this.nbColors[this.difficulty];
     let color: string = "";
+    let colorname: string = "";
 
     this.colorType = this.possible[this.getRandomInt(0, this.possible.length - 1)];
     for(let k:number = 1 ; k <= nb_color; k++){
       do
       {
         color = this.generateColorCode(this.colorType);
-      } while(this.isColorAlreadyChoose(color) === true)
+        colorname = this.generateColorCode(this.colorType);
+      } while(this.isColorAlreadyChoose(color, colorname) === true)
       this.colors.push(color);
+      this.colorsName.push(colorname);
     }
-    this.goodColor = this.colors[Math.floor(Math.random() * this.colors.length)];
+
+    this.random = Math.floor(Math.random() * this.colors.length)
+    this.goodColor = this.colors[this.random];
+    this.colorsName[this.random] = this.goodColor;
+
   }
   goToNavPage(): void {
     this.navCtrl.pop()

@@ -55,7 +55,11 @@ page-nav {
       background-color: $hard-color-primary;
     }
 
-    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(4) {
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(4){
+      background-color: $initiated-color-secondary;
+    }
+
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet:nth-child(5) {
       background-color: $doom-color-secondary;
     }
 
@@ -161,7 +165,11 @@ page-nav {
     width: 75%;
   }
 
-  .nav1 .slide-zoom .sub-button .ico-block {
+  .nav5 .slide-zoom .header-page .img-level img{
+    width: 80%;
+  }
+  .nav1 .slide-zoom .sub-button .ico-block{
+
     @include button-mode($easy-color-primary, $easy-color-secondary);
   }
 
@@ -173,7 +181,11 @@ page-nav {
     @include button-mode($hard-color-primary, $hard-color-secondary);
   }
 
-  .nav4 .slide-zoom .sub-button .ico-block {
+  .nav4 .slide-zoom .sub-button .ico-block{
+    @include button-mode($initiated-color-primary, $initiated-color-secondary);
+  }
+
+  .nav5 .slide-zoom .sub-button .ico-block {
     @include button-mode($doom-color-primary, $doom-color-secondary);
   }
 }

@@ -9,6 +9,7 @@ import { NormalPage } from '../normal/normal';
 import { HardPage } from '../hard/hard';
 import { DoomPage } from '../doom/doom';
 import { RecordPage } from '../record/record';
+import { InitiatedPage } from '../initiated/initiated';
 
 @Component({
   selector: 'page-nav',
@@ -23,11 +24,13 @@ export class NavPage {
   helpNormal: boolean = false;
   helpHard: boolean = false;
   helpDoom: boolean = false;
+  helpInitiated: boolean = false;
 
   recordEasy: number;
   recordNormal: number;
   recordHard: number;
   recordDoom: number;
+  sharingScore: number;
 
   toggleHelp(difficulty: string){
     switch(difficulty) {
@@ -47,6 +50,10 @@ export class NavPage {
         this.helpDoom = !this.helpDoom;
         break;
       }
+      case "initiated": {
+        this.helpInitiated = !this.helpInitiated;
+        break;
+      }
     }
   }
 
@@ -62,6 +69,9 @@ export class NavPage {
     });
     this.storage.get('bestScoreDoom').then((val: number) => {
       this.recordDoom = val;
+    });
+    this.storage.get('sharing_score').then((val: number) => {
+      this.sharingScore = val;
     });
   }
 
@@ -81,6 +91,9 @@ export class NavPage {
   }
   goToDoomPage(): void {
     this.navCtrl.push(DoomPage, { "parentPage": this });
+  }
+  goToInitiatedPage(): void {
+    this.navCtrl.push(InitiatedPage, { "parentPage": this });
   }
   goToRecordPage(): void {
     this.navCtrl.push(RecordPage, { "parentPage": this });

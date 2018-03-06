@@ -59,6 +59,9 @@ page-record {
       @include button-mode($hard-color-primary, $hard-color-secondary);
     }
     .record-box:nth-child(4){
+      @include button-mode($initiated-color-primary, $initiated-color-secondary);
+    }
+    .record-box:nth-child(5){
       @include button-mode($doom-color-primary, $doom-color-secondary);
     }
   }
