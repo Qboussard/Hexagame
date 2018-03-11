@@ -5,7 +5,7 @@ import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-normal',
-  templateUrl: 'normal.html',
+  templateUrl: '../gameBoard/board.html',
 })
 export class NormalPage {
 
@@ -105,14 +105,14 @@ export class NormalPage {
 
     let nb_color: number = this.nbColors[this.difficulty];
     let color: string = "";
-    for(let k:number = 1 ; k <= nb_color ; k++){
+    for(let k:number = 1; k <= nb_color ; k++){
       do
       {
         color = this.generateColorCode();        
       } while(this.isColorAlreadyChoose(color) === true)
       this.colors.push(color);
     }
-    this.goodColor = this.colors[Math.floor(Math.random() * this.colors.length)];
+    this.goodColor = this.colors[this.getRandomInt(0, nb_color - 1)];
   }
   ionViewWillLeave(): void {
     this.navParams.get("parentPage").ngOnInit();
