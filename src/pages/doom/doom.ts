@@ -5,7 +5,7 @@ import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-doom',
-  templateUrl: 'doom.html'
+  templateUrl: '../gameBoard/board.html'
 })
 export class DoomPage {
   constructor(public navCtrl: NavController, private shareService: ShareService, private storage: Storage) {}
@@ -20,6 +20,7 @@ export class DoomPage {
   colors: Array<string> = [];
   fail: number = 0;
   record: number;
+  activeTimer: boolean = false;
 
   getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -85,16 +86,16 @@ export class DoomPage {
     this.colors = [];
     this.setDifficulty();
 
+    let nb_color: number = this.nbColors[this.difficulty];
     let color:string = "";
-    let len: number = this.nbColors[this.difficulty];
-    for(let k:number = 1 ; k <= len ; k++){
+    for(let k:number = 1; k <= nb_color ; k++){
       do
       {
         color = this.generateColorCode();        
       } while(this.isColorAlreadyChoose(color) === true)
       this.colors.push(color);
     }
-    this.goodColor = this.colors[Math.floor(Math.random() * this.colors.length)];
+    this.goodColor = this.colors[this.getRandomInt(0, nb_color - 1)];
   }
   goToNavPage() {
     this.navCtrl.pop()

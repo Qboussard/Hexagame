@@ -5,7 +5,7 @@ import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-easy',
-  templateUrl: 'easy.html',
+  templateUrl: '../gameBoard/board.html',
 })
 export class EasyPage {
 
@@ -23,6 +23,7 @@ export class EasyPage {
   colors: Array<string> = [];
   fail: number = 0;
   record: number;
+  activeTimer: boolean = false;
 
   getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -33,7 +34,7 @@ export class EasyPage {
   }
 
   setDifficulty(): number {
-    if (this.point === 0 && this.point < 5)    return this.difficulty = 0;
+    if (this.point === 0 && this.point < 5)   return this.difficulty = 0;
     if (this.point >= 5 && this.point < 10)   return this.difficulty = 1;
     if (this.point >= 10 && this.point < 15)  return this.difficulty = 2;
     if (this.point >= 15)                     return this.difficulty = 3;
@@ -82,14 +83,14 @@ export class EasyPage {
 
     let nb_color: number = this.nbColors[this.difficulty];
     let color: string = "";
-    for(let k:number = 1 ; k <= nb_color; k++){
+    for(let k:number = 0; k < nb_color; k++){
       do
       {
         color = this.generateColorCode();        
       } while(this.isColorAlreadyChoose(color) === true)
       this.colors.push(color);
     }
-    this.goodColor = this.colors[Math.floor(Math.random() * this.colors.length)];
+    this.goodColor = this.colors[this.getRandomInt(0, nb_color - 1)];
   }
   goToNavPage(): void {
     this.navCtrl.pop()

@@ -6,7 +6,7 @@ import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-hard',
-  templateUrl: 'hard.html'
+  templateUrl: '../gameBoard/board.html'
 })
 export class HardPage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private shareService: ShareService, private storage: Storage) {
@@ -46,6 +46,7 @@ export class HardPage {
   colors: Array<string> = [];
   fail: number = 0;
   record: number;
+  activeTimer: boolean = false;
 
   getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -128,14 +129,14 @@ export class HardPage {
     let color: string = "";
 
     this.colorType = this.possible[this.getRandomInt(0, this.possible.length - 1)];
-    for(let k:number = 1 ; k <= nb_color; k++){
+    for(let k:number = 1; k <= nb_color; k++){
       do
       {
         color = this.generateColorCode(this.colorType);
       } while(this.isColorAlreadyChoose(color) === true)
       this.colors.push(color);
     }
-    this.goodColor = this.colors[Math.floor(Math.random() * this.colors.length)];
+    this.goodColor = this.colors[this.getRandomInt(0, nb_color - 1)];
   }
   goToNavPage(): void {
     this.navCtrl.pop()
